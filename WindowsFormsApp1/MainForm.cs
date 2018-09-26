@@ -75,5 +75,13 @@ namespace ClientAppNamespace
 			ViewAssetForm AssetForm = new ViewAssetForm();
 			AssetForm.Show();
 		}
+
+		private void searchResultsBox_KeyDown(object sender, KeyEventArgs e)
+		{
+			if (e.KeyCode == Keys.Enter)
+			{
+				loadEntryButton_Click(this, new EventArgs());
+			}
+		}
 	}
 }

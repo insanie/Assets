@@ -66,6 +66,7 @@
 			this.searchResultsBox.Size = new System.Drawing.Size(265, 107);
 			this.searchResultsBox.TabIndex = 4;
 			this.searchResultsBox.SelectedIndexChanged += new System.EventHandler(this.listBox1_SelectedIndexChanged);
+			this.searchResultsBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.searchResultsBox_KeyDown);
 			// 
 			// testLabel
 			// 
@@ -150,7 +151,7 @@
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(602, 588);
+			this.ClientSize = new System.Drawing.Size(602, 192);
 			this.Controls.Add(this.panel1);
 			this.Controls.Add(this.searchPanel);
 			this.Controls.Add(this.testLabel);
