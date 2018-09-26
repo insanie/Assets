@@ -44,6 +44,7 @@ namespace ClientAppNamespace
 				else
 				{
 					searchResultsBox.DataSource = null;
+					loadEntryButton.Enabled = false;
 					errorLabel.Text = "No entries found";
 				}
 				sqlOutput.Close();
