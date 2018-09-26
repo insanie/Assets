@@ -21,7 +21,7 @@ namespace ClientAppNamespace
 		{
 			String query = $"SELECT * FROM dbo.main WHERE hostname = '{searchBox.Text}' ORDER BY id DESC;";
 			String connLine = "Server = dc-sql12-db\\db; Database = Inventory; Trusted_Connection = Yes; Integrated Security = SSPI;";
-			var searchTable = new List<dboMain>();
+			List<dboMain> searchTable = new List<dboMain>();
 			using (SqlConnection conn = new SqlConnection(connLine))
 			{
 				SqlCommand command = new SqlCommand(query, conn);
