@@ -83,5 +83,10 @@ namespace ClientAppNamespace
 				loadEntryButton_Click(this, new EventArgs());
 			}
 		}
+
+		private void searchResultsBox_DoubleClick(object sender, EventArgs e)
+		{
+			loadEntryButton_Click(this, new EventArgs());
+		}
 	}
 }

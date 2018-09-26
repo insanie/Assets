@@ -66,6 +66,7 @@
 			this.searchResultsBox.Size = new System.Drawing.Size(265, 107);
 			this.searchResultsBox.TabIndex = 4;
 			this.searchResultsBox.SelectedIndexChanged += new System.EventHandler(this.listBox1_SelectedIndexChanged);
+			this.searchResultsBox.DoubleClick += new System.EventHandler(this.searchResultsBox_DoubleClick);
 			this.searchResultsBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.searchResultsBox_KeyDown);
 			// 
 			// testLabel
