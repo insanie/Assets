@@ -22,17 +22,18 @@ namespace ClientAppNamespace
 		private void button1_Click(object sender, EventArgs e)
 		{
 			String query = $"SELECT * FROM dbo.main WHERE hostname = '{searchBox.Text}' ORDER BY id DESC;";
-			List<object> searchResultsList = dboMain.getFromSql(query, connectionLine);
+			List<object> searchResultsList = dboTable.getFromSql(query, connectionLine);
 			if (searchResultsList.Count != 0)
 			{
 				List<string> ololo = new List<string>();
-				foreach (dboMain tmp in searchResultsList)
+				foreach (dboTable tmp in searchResultsList)
 				{
 					ololo.Add(Convert.ToString(tmp.scantime));
 				}
 				searchResultsBox.DataSource = ololo;
 				loadEntryButton.Enabled = true;
 				errorLabel.Text = null;
+				searchResultsBox.Focus();
 			}
 			else
 			{
