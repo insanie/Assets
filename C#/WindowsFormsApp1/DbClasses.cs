@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Data.SqlClient;
 
 namespace ClientAppNamespace
@@ -45,6 +46,22 @@ namespace ClientAppNamespace
 			ram_occslots = inputObj.GetByte(16);
 			ram_total = inputObj.GetFloat(17);
 			ram_max = inputObj.GetFloat(18);
+		}
+		public List<object> getFromSql(String query, String connectionLine)
+		{
+			List<object> outputList = new List<object>();
+			using (SqlConnection connection = new SqlConnection(connectionLine))
+			{
+				SqlCommand command = new SqlCommand(query, connection);
+				connection.Open();
+				SqlDataReader sqlOutput = command.ExecuteReader();
+				if (sqlOutput.HasRows)
+				{
+					outputList.Add(new dboMain(sqlOutput));
+				}
+				sqlOutput.Close();
+			}
+			return outputList;
 		}
 	}
 	public class dboUsr
