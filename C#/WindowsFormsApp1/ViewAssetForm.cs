@@ -18,7 +18,8 @@ namespace ClientAppNamespace
 
 		private void ViewAssetForm_Load(object sender, EventArgs e)
 		{
-			hostnameLabel.Text = "ololo";
+			hostnameStaticLabel.Text = "ololo";
+
 		}
 	}
 }

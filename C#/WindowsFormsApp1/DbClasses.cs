@@ -185,9 +185,9 @@ namespace ClientAppNamespace
 			}
 
 		}
-		static public List<object> getFromSql(String query, String connectionLine)
+		static public List<dboTable> getFromSql(String query, String connectionLine, String tableType)
 		{
-			List<object> outputList = new List<object>();
+			List<dboTable> outputList = new List<dboTable>();
 			using (SqlConnection connection = new SqlConnection(connectionLine))
 			{
 				SqlCommand command = new SqlCommand(query, connection);
@@ -197,7 +197,7 @@ namespace ClientAppNamespace
 				{
 					while (sqlOutput.Read())
 					{
-						outputList.Add(new dboTable(sqlOutput, "main"));
+						outputList.Add(new dboTable(sqlOutput, tableType));
 					}
 				}
 				sqlOutput.Close();

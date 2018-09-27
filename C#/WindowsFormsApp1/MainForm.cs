@@ -7,66 +7,69 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using System.Linq;
 
 namespace ClientAppNamespace
 {
 	public partial class MainForm : Form
 	{
 		String connectionLine = "Server = dc-sql12-db\\db; Database = Inventory; Trusted_Connection = Yes; Integrated Security = SSPI;";
-
+		List<dboTable> queryResultsList = new List<dboTable>();
 		public MainForm()
 		{
 			InitializeComponent();
 		}
 
-		private void button1_Click(object sender, EventArgs e)
+		private void MainForm_Load(object sender, EventArgs e)
 		{
-			String query = $"SELECT * FROM dbo.main WHERE hostname = '{searchBox.Text}' ORDER BY id DESC;";
-			List<object> searchResultsList = dboTable.getFromSql(query, connectionLine);
-			if (searchResultsList.Count != 0)
+			
+		}
+
+		private void searchButton_Click(object sender, EventArgs e)
+		{
+			queryResultsList = dboTable.getFromSql($"SELECT * FROM dbo.main WHERE hostname = '{searchBox.Text}' ORDER BY id DESC;", connectionLine, "main");
+			if (queryResultsList.Count != 0)
 			{
-				List<string> ololo = new List<string>();
-				foreach (dboTable tmp in searchResultsList)
+				List<string> searchResulsList = new List<string>();
+				foreach (dboTable tmp in queryResultsList)
 				{
-					ololo.Add(Convert.ToString(tmp.scantime));
+					searchResulsList.Add(Convert.ToString(tmp.scantime));
 				}
-				searchResultsBox.DataSource = ololo;
+				searchResultsBox.DataSource = searchResulsList;
 				loadEntryButton.Enabled = true;
-				errorLabel.Text = null;
 				searchResultsBox.Focus();
 			}
 			else
 			{
-				searchResultsBox.DataSource = null;
+				searchResultsBox.DataSource = new List<string> {"No entries found"};
 				loadEntryButton.Enabled = false;
-				errorLabel.Text = "No entries found";
 			}
 		}
 
-		private void Form1_Load(object sender, EventArgs e)
+		private void searchResultsBox_SelectedIndexChanged(object sender, EventArgs e)
 		{
-			
-		}
-
-		private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
-		{
-			testLabel.Text = Convert.ToString(searchResultsBox.SelectedItem);
 			loadEntryButton.Enabled = true;
-		}
-
-		private void searchBox_KeyDown(object sender, KeyEventArgs e)
-		{
-			if (e.KeyCode == Keys.Enter)
-			{
-				button1_Click(this, new EventArgs());
-			}
 		}
 
 		private void loadEntryButton_Click(object sender, EventArgs e)
 		{
-			
+			List<dboTable> mainResults = dboTable.getFromSql($"SELECT * FROM dbo.main WHERE id = {queryResultsList[searchResultsBox.SelectedIndex].id};", connectionLine, "main");
 			ViewAssetForm AssetForm = new ViewAssetForm();
 			AssetForm.Show();
+		}
+
+		// keys'n'double clicks hadlers below
+		private void searchBox_KeyDown(object sender, KeyEventArgs e)
+		{
+			if (e.KeyCode == Keys.Enter)
+			{
+				searchButton_Click(this, new EventArgs());
+			}
+		}
+
+		private void searchResultsBox_DoubleClick(object sender, EventArgs e)
+		{
+			loadEntryButton_Click(this, new EventArgs());
 		}
 
 		private void searchResultsBox_KeyDown(object sender, KeyEventArgs e)
@@ -77,9 +80,6 @@ namespace ClientAppNamespace
 			}
 		}
 
-		private void searchResultsBox_DoubleClick(object sender, EventArgs e)
-		{
-			loadEntryButton_Click(this, new EventArgs());
-		}
+		// test shit below
 	}
 }
