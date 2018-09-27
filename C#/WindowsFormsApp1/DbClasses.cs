@@ -28,7 +28,7 @@ namespace ClientAppNamespace
 		public Int32 id_parent { get; set; }
 		public String fullname { get; set; }
 		public Byte place { get; set; }
-		public DateTime logontime { get; set; }
+		public DateTime? logontime { get; set; }
 		public String account { get; set; }
 		public String company { get; set; }
 		public String department { get; set; }
@@ -92,7 +92,14 @@ namespace ClientAppNamespace
 					id_parent = inputObj.GetInt32(1);
 					fullname = inputObj.GetString(2);
 					place = inputObj.GetByte(3);
-					logontime = inputObj.GetDateTime(4);
+					if (!inputObj.IsDBNull(4))
+					{
+						logontime = inputObj.GetDateTime(4);
+					}
+					else
+					{
+						logontime = null;
+					}
 					account = inputObj.GetString(5);
 					company = inputObj.GetString(6);
 					department = inputObj.GetString(7);

@@ -7,7 +7,6 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using System.Data.SqlClient;
-using System.Linq;
 
 namespace ClientAppNamespace
 {
@@ -53,8 +52,19 @@ namespace ClientAppNamespace
 
 		private void loadEntryButton_Click(object sender, EventArgs e)
 		{
-			List<dboTable> mainResults = dboTable.getFromSql($"SELECT * FROM dbo.main WHERE id = {queryResultsList[searchResultsBox.SelectedIndex].id};", connectionLine, "main");
-			ViewAssetForm AssetForm = new ViewAssetForm();
+			List<List<dboTable>> sentData = new List<List<dboTable>>();
+			sentData.Add(dboTable.getFromSql($"SELECT * FROM dbo.main WHERE id = {queryResultsList[searchResultsBox.SelectedIndex].id};", connectionLine, "main"));
+			sentData.Add(dboTable.getFromSql($"SELECT * FROM dbo.usr WHERE id_parent = {queryResultsList[searchResultsBox.SelectedIndex].id};", connectionLine, "usr"));
+			sentData.Add(dboTable.getFromSql($"SELECT * FROM dbo.cpu WHERE id_parent = {queryResultsList[searchResultsBox.SelectedIndex].id};", connectionLine, "cpu"));
+			sentData.Add(dboTable.getFromSql($"SELECT * FROM dbo.drv WHERE id_parent = {queryResultsList[searchResultsBox.SelectedIndex].id};", connectionLine, "drv"));
+			sentData.Add(dboTable.getFromSql($"SELECT * FROM dbo.vol WHERE id_parent = {queryResultsList[searchResultsBox.SelectedIndex].id};", connectionLine, "vol"));
+			sentData.Add(dboTable.getFromSql($"SELECT * FROM dbo.ram WHERE id_parent = {queryResultsList[searchResultsBox.SelectedIndex].id};", connectionLine, "ram"));
+			sentData.Add(dboTable.getFromSql($"SELECT * FROM dbo.net WHERE id_parent = {queryResultsList[searchResultsBox.SelectedIndex].id};", connectionLine, "net"));
+			sentData.Add(dboTable.getFromSql($"SELECT * FROM dbo.gpu WHERE id_parent = {queryResultsList[searchResultsBox.SelectedIndex].id};", connectionLine, "gpu"));
+			sentData.Add(dboTable.getFromSql($"SELECT * FROM dbo.mon WHERE id_parent = {queryResultsList[searchResultsBox.SelectedIndex].id};", connectionLine, "mon"));
+			sentData.Add(dboTable.getFromSql($"SELECT * FROM dbo.prn WHERE id_parent = {queryResultsList[searchResultsBox.SelectedIndex].id};", connectionLine, "prn"));
+			sentData.Add(dboTable.getFromSql($"SELECT * FROM dbo.soft WHERE id_parent = {queryResultsList[searchResultsBox.SelectedIndex].id};", connectionLine, "soft"));
+			ViewAssetForm AssetForm = new ViewAssetForm(sentData);
 			AssetForm.Show();
 		}
 
