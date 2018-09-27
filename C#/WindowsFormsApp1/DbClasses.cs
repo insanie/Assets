@@ -47,7 +47,7 @@ namespace ClientAppNamespace
 			ram_total = inputObj.GetFloat(17);
 			ram_max = inputObj.GetFloat(18);
 		}
-		public List<object> getFromSql(String query, String connectionLine)
+		static public List<object> getFromSql(String query, String connectionLine)
 		{
 			List<object> outputList = new List<object>();
 			using (SqlConnection connection = new SqlConnection(connectionLine))
@@ -57,7 +57,10 @@ namespace ClientAppNamespace
 				SqlDataReader sqlOutput = command.ExecuteReader();
 				if (sqlOutput.HasRows)
 				{
-					outputList.Add(new dboMain(sqlOutput));
+					while (sqlOutput.Read())
+					{
+						outputList.Add(new dboMain(sqlOutput));
+					}
 				}
 				sqlOutput.Close();
 			}

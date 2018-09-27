@@ -23,34 +23,23 @@ namespace ClientAppNamespace
 		{
 			String query = $"SELECT * FROM dbo.main WHERE hostname = '{searchBox.Text}' ORDER BY id DESC;";
 			List<object> searchResultsList = dboMain.getFromSql(query, connectionLine);
-			//List<object> searchTable = new List<object>();
-			//using (SqlConnection conn = new SqlConnection(connLine))
-			//{
-			//	SqlCommand command = new SqlCommand(query, conn);
-			//	conn.Open();
-			//	SqlDataReader sqlOutput = command.ExecuteReader();
-			//	if (sqlOutput.HasRows)
-			//	{
-			//		while (sqlOutput.Read())
-			//		{
-			//			searchTable.Add(new dboMain(sqlOutput));
-			//		}
-			//		List<string> searchResultsList = new List<string>();
-			//		foreach (dboMain tmp in searchTable)
-			//		{
-			//			searchResultsList.Add(Convert.ToString(tmp.scantime));
-			//		}
-			//		searchResultsBox.DataSource = searchResultsList;
-			//		errorLabel.Text = "";
-			//	}
-			//	else
-			//	{
-			//		searchResultsBox.DataSource = null;
-			//		loadEntryButton.Enabled = false;
-			//		errorLabel.Text = "No entries found";
-			//	}
-			//	sqlOutput.Close();
-			//}
+			if (searchResultsList.Count != 0)
+			{
+				List<string> ololo = new List<string>();
+				foreach (dboMain tmp in searchResultsList)
+				{
+					ololo.Add(Convert.ToString(tmp.scantime));
+				}
+				searchResultsBox.DataSource = ololo;
+				loadEntryButton.Enabled = true;
+				errorLabel.Text = null;
+			}
+			else
+			{
+				searchResultsBox.DataSource = null;
+				loadEntryButton.Enabled = false;
+				errorLabel.Text = "No entries found";
+			}
 		}
 
 		private void Form1_Load(object sender, EventArgs e)
