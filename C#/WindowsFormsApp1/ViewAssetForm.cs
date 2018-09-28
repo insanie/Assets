@@ -133,6 +133,27 @@ namespace ClientAppNamespace
 			current.createLabel(sentData[9], printersTab, "printers", "shared", 41);
 			current.createLabel(sentData[9], printersTab, "printers", "port", 61);
 
+			// users tab list creating
+			DataTable usersDataSource = new DataTable();
+			usersDataSource.Columns.Add("Order");
+			usersDataSource.Columns.Add("Name");
+			usersDataSource.Columns.Add("Logontime");
+			usersDataSource.Columns.Add("Company");
+			usersDataSource.Columns.Add("Department");
+			usersDataSource.Columns.Add("Account");
+			foreach(dboTable tmp in sentData[1])
+			{
+				usersDataSource.Rows.Add(tmp.place, tmp.fullname, tmp.logontime, tmp.company, tmp.department, tmp.account);
+			}
+			usersGridView.DataSource = usersDataSource;
+			usersGridView.Columns[0].Width = 50;
+			usersGridView.Columns[1].Width = 190;
+			usersGridView.Columns[2].Width = 150;
+			usersGridView.Columns[3].Width = 170;
+			usersGridView.Columns[4].Width = 181;
+			usersGridView.Columns[5].Width = 90;
+			usersGridView.Sort(usersGridView.Columns[0], ListSortDirection.Ascending);
+
 			// software tab list creating
 			DataTable softwareDataSource = new DataTable();
 			softwareDataSource.Columns.Add("Name");
@@ -142,11 +163,11 @@ namespace ClientAppNamespace
 			{
 				softwareDataSource.Rows.Add(tmp.name, tmp.ver, tmp.path);
 			}
-			dataGridView1.DataSource = softwareDataSource;
-			dataGridView1.Columns[0].Width = 400;
-			dataGridView1.Columns[1].Width = 179;
-			dataGridView1.Columns[2].Width = 252;
-			dataGridView1.Sort(dataGridView1.Columns[0], ListSortDirection.Ascending);
+			softwareGridView.DataSource = softwareDataSource;
+			softwareGridView.Columns[0].Width = 400;
+			softwareGridView.Columns[1].Width = 179;
+			softwareGridView.Columns[2].Width = 252;
+			softwareGridView.Sort(softwareGridView.Columns[0], ListSortDirection.Ascending);
 		}
 		private void ViewAssetForm_Load(object sender, EventArgs e)
 		{
