@@ -79,14 +79,20 @@ namespace ClientAppNamespace
 
 		private void searchResultsBox_DoubleClick(object sender, EventArgs e)
 		{
-			loadEntryButton_Click(this, new EventArgs());
+			if (loadEntryButton.Enabled)
+			{
+				loadEntryButton_Click(this, new EventArgs());
+			}
 		}
 
 		private void searchResultsBox_KeyDown(object sender, KeyEventArgs e)
 		{
 			if (e.KeyCode == Keys.Enter)
 			{
-				loadEntryButton_Click(this, new EventArgs());
+				if (loadEntryButton.Enabled)
+				{
+					loadEntryButton_Click(this, new EventArgs());
+				}
 			}
 		}
 

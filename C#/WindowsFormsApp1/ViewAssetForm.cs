@@ -72,13 +72,28 @@ namespace ClientAppNamespace
 
 			// partitions tab labels creating
 			// static ones
-			current.createStaticLabel(new[] {"Drive", "Filesystem", "Size", "Used", "Free"}, partitionsTab, "partitions");
+			current.createStaticLabel(new[] {"Drive", "Filesystem", "Size", "Used", "Free", "Occupation"}, partitionsTab, "partitions");
 			// value ones
 			current.createLabel(sentData[4], partitionsTab, "partitions", "letter", 1);
 			current.createLabel(sentData[4], partitionsTab, "partitions", "filesys", 21);
 			current.createLabel(sentData[4], partitionsTab, "partitions", "size", 41, " GB");
 			current.createLabel(sentData[4], partitionsTab, "partitions", "used", 61, " GB");
 			current.createLabel(sentData[4], partitionsTab, "partitions", "free", 81, " GB");
+			// creating progress bars
+			Byte positionIncrement = 1;
+			Dictionary<String, ProgressBar> names = new Dictionary<String, ProgressBar>();
+			foreach (dboTable tmp in sentData[4])
+			{
+				String name = $"partitions_progressBar" + Convert.ToString(positionIncrement);
+				names[name] = new ProgressBar();
+				partitionsTab.Controls.Add(names[name]);
+				names[name].Location = new Point(current.labelStaticWidth + 1 + current.labelWidth * (positionIncrement - 1) + 2, 101 + 2);
+				names[name].Margin = new Padding(0);
+				names[name].Name = name;
+				names[name].Size = new Size(current.labelWidth / 2, current.labelHeight - 4);
+				names[name].Value = Convert.ToInt32(tmp.used / tmp.size * 100);
+				positionIncrement++;
+			}
 
 			// networking tab labels creating
 			// static ones
@@ -117,6 +132,21 @@ namespace ClientAppNamespace
 			current.createLabel(sentData[9], printersTab, "printers", "def", 21);
 			current.createLabel(sentData[9], printersTab, "printers", "shared", 41);
 			current.createLabel(sentData[9], printersTab, "printers", "port", 61);
+
+			// software tab list creating
+			DataTable softwareDataSource = new DataTable();
+			softwareDataSource.Columns.Add("Name");
+			softwareDataSource.Columns.Add("Version");
+			softwareDataSource.Columns.Add("Path");
+			foreach (dboTable tmp in sentData[10])
+			{
+				softwareDataSource.Rows.Add(tmp.name, tmp.ver, tmp.path);
+			}
+			dataGridView1.DataSource = softwareDataSource;
+			dataGridView1.Columns[0].Width = 400;
+			dataGridView1.Columns[1].Width = 179;
+			dataGridView1.Columns[2].Width = 252;
+			dataGridView1.Sort(dataGridView1.Columns[0], ListSortDirection.Ascending);
 		}
 		private void ViewAssetForm_Load(object sender, EventArgs e)
 		{
@@ -139,8 +169,8 @@ namespace ClientAppNamespace
 		}
 		private void partitionsTab_Enter(object sender, EventArgs e)
 		{
-			Height = 391;
-			tabPanel.Height = 148;
+			Height = 411;
+			tabPanel.Height = 168;
 		}
 		private void networkingTab_Enter(object sender, EventArgs e)
 		{

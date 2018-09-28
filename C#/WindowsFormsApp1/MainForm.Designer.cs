@@ -39,10 +39,10 @@
 			this.searchResultsBox.FormattingEnabled = true;
 			this.searchResultsBox.IntegralHeight = false;
 			this.searchResultsBox.ItemHeight = 17;
-			this.searchResultsBox.Location = new System.Drawing.Point(15, 50);
+			this.searchResultsBox.Location = new System.Drawing.Point(15, 77);
 			this.searchResultsBox.Margin = new System.Windows.Forms.Padding(3, 4, 3, 2);
 			this.searchResultsBox.Name = "searchResultsBox";
-			this.searchResultsBox.Size = new System.Drawing.Size(302, 131);
+			this.searchResultsBox.Size = new System.Drawing.Size(161, 131);
 			this.searchResultsBox.TabIndex = 4;
 			this.searchResultsBox.SelectedIndexChanged += new System.EventHandler(this.searchResultsBox_SelectedIndexChanged);
 			this.searchResultsBox.DoubleClick += new System.EventHandler(this.searchResultsBox_DoubleClick);
@@ -54,16 +54,16 @@
 			this.searchBox.Location = new System.Drawing.Point(15, 15);
 			this.searchBox.Margin = new System.Windows.Forms.Padding(0);
 			this.searchBox.Name = "searchBox";
-			this.searchBox.Size = new System.Drawing.Size(200, 25);
+			this.searchBox.Size = new System.Drawing.Size(161, 25);
 			this.searchBox.TabIndex = 0;
 			this.searchBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.searchBox_KeyDown);
 			// 
 			// searchButton
 			// 
-			this.searchButton.Location = new System.Drawing.Point(230, 15);
+			this.searchButton.Location = new System.Drawing.Point(15, 44);
 			this.searchButton.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
 			this.searchButton.Name = "searchButton";
-			this.searchButton.Size = new System.Drawing.Size(87, 25);
+			this.searchButton.Size = new System.Drawing.Size(161, 25);
 			this.searchButton.TabIndex = 1;
 			this.searchButton.Text = "Search";
 			this.searchButton.UseVisualStyleBackColor = true;
@@ -72,10 +72,10 @@
 			// loadEntryButton
 			// 
 			this.loadEntryButton.Enabled = false;
-			this.loadEntryButton.Location = new System.Drawing.Point(15, 193);
+			this.loadEntryButton.Location = new System.Drawing.Point(15, 211);
 			this.loadEntryButton.Margin = new System.Windows.Forms.Padding(3, 1, 3, 3);
 			this.loadEntryButton.Name = "loadEntryButton";
-			this.loadEntryButton.Size = new System.Drawing.Size(302, 25);
+			this.loadEntryButton.Size = new System.Drawing.Size(161, 25);
 			this.loadEntryButton.TabIndex = 9;
 			this.loadEntryButton.Text = "Load entry";
 			this.loadEntryButton.UseVisualStyleBackColor = true;
@@ -85,7 +85,7 @@
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
-			this.ClientSize = new System.Drawing.Size(333, 232);
+			this.ClientSize = new System.Drawing.Size(192, 251);
 			this.Controls.Add(this.searchBox);
 			this.Controls.Add(this.searchResultsBox);
 			this.Controls.Add(this.searchButton);
@@ -96,7 +96,7 @@
 			this.MaximizeBox = false;
 			this.Name = "MainForm";
 			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-			this.Text = "Form1";
+			this.Text = "Assets";
 			this.Load += new System.EventHandler(this.MainForm_Load);
 			this.ResumeLayout(false);
 			this.PerformLayout();

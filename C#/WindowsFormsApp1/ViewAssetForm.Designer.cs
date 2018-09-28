@@ -28,6 +28,7 @@
 		/// </summary>
 		private void InitializeComponent()
 		{
+			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
 			this.tabPanel = new System.Windows.Forms.TabControl();
 			this.cpuTab = new System.Windows.Forms.TabPage();
 			this.dimmTab = new System.Windows.Forms.TabPage();
@@ -72,12 +73,15 @@
 			this.bios_verStaticLabel = new System.Windows.Forms.Label();
 			this.bios_nameLabel = new System.Windows.Forms.Label();
 			this.groupsPanel = new System.Windows.Forms.Panel();
+			this.dataGridView1 = new System.Windows.Forms.DataGridView();
 			this.tabPanel.SuspendLayout();
+			this.softwareTab.SuspendLayout();
 			this.osGroupBox.SuspendLayout();
 			this.ramGroupBox.SuspendLayout();
 			this.motherboardGroupBox.SuspendLayout();
 			this.biosGroupBox.SuspendLayout();
 			this.groupsPanel.SuspendLayout();
+			((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
 			this.SuspendLayout();
 			// 
 			// tabPanel
@@ -213,6 +217,7 @@
 			// softwareTab
 			// 
 			this.softwareTab.AutoScroll = true;
+			this.softwareTab.Controls.Add(this.dataGridView1);
 			this.softwareTab.Location = new System.Drawing.Point(4, 26);
 			this.softwareTab.Margin = new System.Windows.Forms.Padding(0);
 			this.softwareTab.Name = "softwareTab";
@@ -577,6 +582,37 @@
 			this.groupsPanel.Size = new System.Drawing.Size(857, 201);
 			this.groupsPanel.TabIndex = 9;
 			// 
+			// dataGridView1
+			// 
+			this.dataGridView1.AllowUserToAddRows = false;
+			this.dataGridView1.AllowUserToDeleteRows = false;
+			this.dataGridView1.AllowUserToOrderColumns = true;
+			this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.Control;
+			this.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+			this.dataGridView1.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Sunken;
+			this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+			dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+			dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+			dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
+			dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+			dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+			dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+			this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle1;
+			this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.dataGridView1.Location = new System.Drawing.Point(0, 0);
+			this.dataGridView1.Margin = new System.Windows.Forms.Padding(0);
+			this.dataGridView1.MultiSelect = false;
+			this.dataGridView1.Name = "dataGridView1";
+			this.dataGridView1.ReadOnly = true;
+			this.dataGridView1.RowHeadersVisible = false;
+			this.dataGridView1.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
+			this.dataGridView1.RowTemplate.DefaultCellStyle.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+			this.dataGridView1.RowTemplate.Height = 20;
+			this.dataGridView1.RowTemplate.ReadOnly = true;
+			this.dataGridView1.Size = new System.Drawing.Size(849, 118);
+			this.dataGridView1.TabIndex = 0;
+			// 
 			// ViewAssetForm
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
@@ -592,11 +628,13 @@
 			this.Text = "Form1";
 			this.Load += new System.EventHandler(this.ViewAssetForm_Load);
 			this.tabPanel.ResumeLayout(false);
+			this.softwareTab.ResumeLayout(false);
 			this.osGroupBox.ResumeLayout(false);
 			this.ramGroupBox.ResumeLayout(false);
 			this.motherboardGroupBox.ResumeLayout(false);
 			this.biosGroupBox.ResumeLayout(false);
 			this.groupsPanel.ResumeLayout(false);
+			((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
 			this.ResumeLayout(false);
 
 		}
@@ -646,5 +684,6 @@
 		private System.Windows.Forms.TabPage printersTab;
 		private System.Windows.Forms.TabPage softwareTab;
 		private System.Windows.Forms.Panel groupsPanel;
+		private System.Windows.Forms.DataGridView dataGridView1;
 	}
 }
