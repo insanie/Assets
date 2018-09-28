@@ -29,6 +29,16 @@
 		private void InitializeComponent()
 		{
 			this.tabPanel = new System.Windows.Forms.TabControl();
+			this.cpuTab = new System.Windows.Forms.TabPage();
+			this.dimmTab = new System.Windows.Forms.TabPage();
+			this.drivesTab = new System.Windows.Forms.TabPage();
+			this.partitionsTab = new System.Windows.Forms.TabPage();
+			this.networkingTab = new System.Windows.Forms.TabPage();
+			this.gpuTab = new System.Windows.Forms.TabPage();
+			this.monitorsTab = new System.Windows.Forms.TabPage();
+			this.printersTab = new System.Windows.Forms.TabPage();
+			this.usersTab = new System.Windows.Forms.TabPage();
+			this.softwareTab = new System.Windows.Forms.TabPage();
 			this.os_langLabel = new System.Windows.Forms.Label();
 			this.os_langStaticLabel = new System.Windows.Forms.Label();
 			this.os_buildLabel = new System.Windows.Forms.Label();
@@ -37,12 +47,6 @@
 			this.os_archStaticLabel = new System.Windows.Forms.Label();
 			this.os_systemLabel = new System.Windows.Forms.Label();
 			this.os_systemStaticLabel = new System.Windows.Forms.Label();
-			this.usersTab = new System.Windows.Forms.TabPage();
-			this.cpuTab = new System.Windows.Forms.TabPage();
-			this.drivesTab = new System.Windows.Forms.TabPage();
-			this.partitionsTab = new System.Windows.Forms.TabPage();
-			this.dimmTab = new System.Windows.Forms.TabPage();
-			this.networkingTab = new System.Windows.Forms.TabPage();
 			this.osGroupBox = new System.Windows.Forms.GroupBox();
 			this.ramGroupBox = new System.Windows.Forms.GroupBox();
 			this.ram_maxLabel = new System.Windows.Forms.Label();
@@ -67,15 +71,13 @@
 			this.bios_nameStaticLabel = new System.Windows.Forms.Label();
 			this.bios_verStaticLabel = new System.Windows.Forms.Label();
 			this.bios_nameLabel = new System.Windows.Forms.Label();
-			this.gpuTab = new System.Windows.Forms.TabPage();
-			this.monitorsTab = new System.Windows.Forms.TabPage();
-			this.printersTab = new System.Windows.Forms.TabPage();
-			this.softwareTab = new System.Windows.Forms.TabPage();
+			this.panel1 = new System.Windows.Forms.Panel();
 			this.tabPanel.SuspendLayout();
 			this.osGroupBox.SuspendLayout();
 			this.ramGroupBox.SuspendLayout();
 			this.motherboardGroupBox.SuspendLayout();
 			this.biosGroupBox.SuspendLayout();
+			this.panel1.SuspendLayout();
 			this.SuspendLayout();
 			// 
 			// tabPanel
@@ -90,13 +92,124 @@
 			this.tabPanel.Controls.Add(this.printersTab);
 			this.tabPanel.Controls.Add(this.usersTab);
 			this.tabPanel.Controls.Add(this.softwareTab);
-			this.tabPanel.Location = new System.Drawing.Point(0, 200);
+			this.tabPanel.Dock = System.Windows.Forms.DockStyle.Bottom;
+			this.tabPanel.Location = new System.Drawing.Point(0, 199);
 			this.tabPanel.Margin = new System.Windows.Forms.Padding(0);
 			this.tabPanel.Name = "tabPanel";
 			this.tabPanel.Padding = new System.Drawing.Point(0, 0);
 			this.tabPanel.SelectedIndex = 0;
-			this.tabPanel.Size = new System.Drawing.Size(848, 375);
+			this.tabPanel.Size = new System.Drawing.Size(846, 378);
 			this.tabPanel.TabIndex = 2;
+			// 
+			// cpuTab
+			// 
+			this.cpuTab.AutoScroll = true;
+			this.cpuTab.BackColor = System.Drawing.SystemColors.Control;
+			this.cpuTab.Location = new System.Drawing.Point(4, 26);
+			this.cpuTab.Margin = new System.Windows.Forms.Padding(0);
+			this.cpuTab.Name = "cpuTab";
+			this.cpuTab.Size = new System.Drawing.Size(838, 348);
+			this.cpuTab.TabIndex = 2;
+			this.cpuTab.Text = "CPU";
+			// 
+			// dimmTab
+			// 
+			this.dimmTab.AutoScroll = true;
+			this.dimmTab.BackColor = System.Drawing.SystemColors.Control;
+			this.dimmTab.Location = new System.Drawing.Point(4, 26);
+			this.dimmTab.Margin = new System.Windows.Forms.Padding(0);
+			this.dimmTab.Name = "dimmTab";
+			this.dimmTab.Size = new System.Drawing.Size(838, 345);
+			this.dimmTab.TabIndex = 6;
+			this.dimmTab.Text = "DIMM";
+			// 
+			// drivesTab
+			// 
+			this.drivesTab.AutoScroll = true;
+			this.drivesTab.BackColor = System.Drawing.SystemColors.Control;
+			this.drivesTab.Location = new System.Drawing.Point(4, 26);
+			this.drivesTab.Margin = new System.Windows.Forms.Padding(0);
+			this.drivesTab.Name = "drivesTab";
+			this.drivesTab.Size = new System.Drawing.Size(838, 345);
+			this.drivesTab.TabIndex = 4;
+			this.drivesTab.Text = "Drives";
+			// 
+			// partitionsTab
+			// 
+			this.partitionsTab.AutoScroll = true;
+			this.partitionsTab.BackColor = System.Drawing.SystemColors.Control;
+			this.partitionsTab.Location = new System.Drawing.Point(4, 26);
+			this.partitionsTab.Margin = new System.Windows.Forms.Padding(0);
+			this.partitionsTab.Name = "partitionsTab";
+			this.partitionsTab.Size = new System.Drawing.Size(838, 345);
+			this.partitionsTab.TabIndex = 5;
+			this.partitionsTab.Text = "Partitions";
+			// 
+			// networkingTab
+			// 
+			this.networkingTab.AutoScroll = true;
+			this.networkingTab.BackColor = System.Drawing.SystemColors.Control;
+			this.networkingTab.Location = new System.Drawing.Point(4, 26);
+			this.networkingTab.Margin = new System.Windows.Forms.Padding(0);
+			this.networkingTab.Name = "networkingTab";
+			this.networkingTab.Size = new System.Drawing.Size(838, 345);
+			this.networkingTab.TabIndex = 7;
+			this.networkingTab.Text = "Networking";
+			// 
+			// gpuTab
+			// 
+			this.gpuTab.AutoScroll = true;
+			this.gpuTab.BackColor = System.Drawing.SystemColors.Control;
+			this.gpuTab.Location = new System.Drawing.Point(4, 26);
+			this.gpuTab.Margin = new System.Windows.Forms.Padding(0);
+			this.gpuTab.Name = "gpuTab";
+			this.gpuTab.Size = new System.Drawing.Size(838, 345);
+			this.gpuTab.TabIndex = 8;
+			this.gpuTab.Text = "GPU";
+			// 
+			// monitorsTab
+			// 
+			this.monitorsTab.AutoScroll = true;
+			this.monitorsTab.BackColor = System.Drawing.SystemColors.Control;
+			this.monitorsTab.Location = new System.Drawing.Point(4, 26);
+			this.monitorsTab.Margin = new System.Windows.Forms.Padding(0);
+			this.monitorsTab.Name = "monitorsTab";
+			this.monitorsTab.Size = new System.Drawing.Size(838, 345);
+			this.monitorsTab.TabIndex = 9;
+			this.monitorsTab.Text = "Monitors";
+			// 
+			// printersTab
+			// 
+			this.printersTab.AutoScroll = true;
+			this.printersTab.BackColor = System.Drawing.SystemColors.Control;
+			this.printersTab.Location = new System.Drawing.Point(4, 26);
+			this.printersTab.Margin = new System.Windows.Forms.Padding(0);
+			this.printersTab.Name = "printersTab";
+			this.printersTab.Size = new System.Drawing.Size(838, 345);
+			this.printersTab.TabIndex = 10;
+			this.printersTab.Text = "Printers";
+			// 
+			// usersTab
+			// 
+			this.usersTab.AutoScroll = true;
+			this.usersTab.BackColor = System.Drawing.SystemColors.Control;
+			this.usersTab.Location = new System.Drawing.Point(4, 26);
+			this.usersTab.Margin = new System.Windows.Forms.Padding(0);
+			this.usersTab.Name = "usersTab";
+			this.usersTab.Size = new System.Drawing.Size(838, 345);
+			this.usersTab.TabIndex = 1;
+			this.usersTab.Text = "Users";
+			// 
+			// softwareTab
+			// 
+			this.softwareTab.AutoScroll = true;
+			this.softwareTab.Location = new System.Drawing.Point(4, 26);
+			this.softwareTab.Margin = new System.Windows.Forms.Padding(0);
+			this.softwareTab.Name = "softwareTab";
+			this.softwareTab.Size = new System.Drawing.Size(838, 345);
+			this.softwareTab.TabIndex = 11;
+			this.softwareTab.Text = "Software";
+			this.softwareTab.UseVisualStyleBackColor = true;
 			// 
 			// os_langLabel
 			// 
@@ -174,66 +287,6 @@
 			this.os_systemStaticLabel.TabIndex = 1;
 			this.os_systemStaticLabel.Text = "System";
 			// 
-			// usersTab
-			// 
-			this.usersTab.BackColor = System.Drawing.SystemColors.Control;
-			this.usersTab.Location = new System.Drawing.Point(4, 26);
-			this.usersTab.Name = "usersTab";
-			this.usersTab.Padding = new System.Windows.Forms.Padding(3);
-			this.usersTab.Size = new System.Drawing.Size(840, 316);
-			this.usersTab.TabIndex = 1;
-			this.usersTab.Text = "Users";
-			// 
-			// cpuTab
-			// 
-			this.cpuTab.BackColor = System.Drawing.SystemColors.Control;
-			this.cpuTab.Location = new System.Drawing.Point(4, 26);
-			this.cpuTab.Name = "cpuTab";
-			this.cpuTab.Padding = new System.Windows.Forms.Padding(3);
-			this.cpuTab.Size = new System.Drawing.Size(840, 345);
-			this.cpuTab.TabIndex = 2;
-			this.cpuTab.Text = "CPU";
-			// 
-			// drivesTab
-			// 
-			this.drivesTab.BackColor = System.Drawing.SystemColors.Control;
-			this.drivesTab.Location = new System.Drawing.Point(4, 26);
-			this.drivesTab.Name = "drivesTab";
-			this.drivesTab.Padding = new System.Windows.Forms.Padding(3);
-			this.drivesTab.Size = new System.Drawing.Size(840, 316);
-			this.drivesTab.TabIndex = 4;
-			this.drivesTab.Text = "Drives";
-			// 
-			// partitionsTab
-			// 
-			this.partitionsTab.BackColor = System.Drawing.SystemColors.Control;
-			this.partitionsTab.Location = new System.Drawing.Point(4, 26);
-			this.partitionsTab.Name = "partitionsTab";
-			this.partitionsTab.Padding = new System.Windows.Forms.Padding(3);
-			this.partitionsTab.Size = new System.Drawing.Size(840, 316);
-			this.partitionsTab.TabIndex = 5;
-			this.partitionsTab.Text = "Partitions";
-			// 
-			// dimmTab
-			// 
-			this.dimmTab.BackColor = System.Drawing.SystemColors.Control;
-			this.dimmTab.Location = new System.Drawing.Point(4, 26);
-			this.dimmTab.Name = "dimmTab";
-			this.dimmTab.Padding = new System.Windows.Forms.Padding(3);
-			this.dimmTab.Size = new System.Drawing.Size(840, 316);
-			this.dimmTab.TabIndex = 6;
-			this.dimmTab.Text = "DIMM";
-			// 
-			// networkingTab
-			// 
-			this.networkingTab.BackColor = System.Drawing.SystemColors.Control;
-			this.networkingTab.Location = new System.Drawing.Point(4, 26);
-			this.networkingTab.Name = "networkingTab";
-			this.networkingTab.Padding = new System.Windows.Forms.Padding(3);
-			this.networkingTab.Size = new System.Drawing.Size(840, 316);
-			this.networkingTab.TabIndex = 7;
-			this.networkingTab.Text = "Networking";
-			// 
 			// osGroupBox
 			// 
 			this.osGroupBox.Controls.Add(this.os_langLabel);
@@ -263,7 +316,7 @@
 			this.ramGroupBox.Controls.Add(this.ram_totalslotsStaticLabel);
 			this.ramGroupBox.Controls.Add(this.ram_totalStaticLabel);
 			this.ramGroupBox.Controls.Add(this.ram_totalslotsLabel);
-			this.ramGroupBox.Location = new System.Drawing.Point(425, 3);
+			this.ramGroupBox.Location = new System.Drawing.Point(426, 3);
 			this.ramGroupBox.Margin = new System.Windows.Forms.Padding(0);
 			this.ramGroupBox.Name = "ramGroupBox";
 			this.ramGroupBox.Padding = new System.Windows.Forms.Padding(0);
@@ -356,7 +409,7 @@
 			this.motherboardGroupBox.Controls.Add(this.mobo_modelStaticLabel);
 			this.motherboardGroupBox.Controls.Add(this.mobo_revStaticLabel);
 			this.motherboardGroupBox.Controls.Add(this.mobo_modelLabel);
-			this.motherboardGroupBox.Location = new System.Drawing.Point(3, 110);
+			this.motherboardGroupBox.Location = new System.Drawing.Point(3, 111);
 			this.motherboardGroupBox.Margin = new System.Windows.Forms.Padding(0);
 			this.motherboardGroupBox.Name = "motherboardGroupBox";
 			this.motherboardGroupBox.Padding = new System.Windows.Forms.Padding(0);
@@ -430,7 +483,7 @@
 			this.biosGroupBox.Controls.Add(this.bios_nameStaticLabel);
 			this.biosGroupBox.Controls.Add(this.bios_verStaticLabel);
 			this.biosGroupBox.Controls.Add(this.bios_nameLabel);
-			this.biosGroupBox.Location = new System.Drawing.Point(425, 110);
+			this.biosGroupBox.Location = new System.Drawing.Point(426, 111);
 			this.biosGroupBox.Margin = new System.Windows.Forms.Padding(0);
 			this.biosGroupBox.Name = "biosGroupBox";
 			this.biosGroupBox.Padding = new System.Windows.Forms.Padding(0);
@@ -496,54 +549,32 @@
 			this.bios_nameLabel.TabIndex = 4;
 			this.bios_nameLabel.Text = "bios_name";
 			// 
-			// gpuTab
+			// panel1
 			// 
-			this.gpuTab.BackColor = System.Drawing.SystemColors.Control;
-			this.gpuTab.Location = new System.Drawing.Point(4, 26);
-			this.gpuTab.Name = "gpuTab";
-			this.gpuTab.Size = new System.Drawing.Size(840, 316);
-			this.gpuTab.TabIndex = 8;
-			this.gpuTab.Text = "GPU";
-			// 
-			// monitorsTab
-			// 
-			this.monitorsTab.BackColor = System.Drawing.SystemColors.Control;
-			this.monitorsTab.Location = new System.Drawing.Point(4, 26);
-			this.monitorsTab.Name = "monitorsTab";
-			this.monitorsTab.Size = new System.Drawing.Size(840, 316);
-			this.monitorsTab.TabIndex = 9;
-			this.monitorsTab.Text = "Monitors";
-			// 
-			// printersTab
-			// 
-			this.printersTab.BackColor = System.Drawing.SystemColors.Control;
-			this.printersTab.Location = new System.Drawing.Point(4, 26);
-			this.printersTab.Name = "printersTab";
-			this.printersTab.Size = new System.Drawing.Size(840, 316);
-			this.printersTab.TabIndex = 10;
-			this.printersTab.Text = "Printers";
-			// 
-			// softwareTab
-			// 
-			this.softwareTab.Location = new System.Drawing.Point(4, 26);
-			this.softwareTab.Name = "softwareTab";
-			this.softwareTab.Size = new System.Drawing.Size(840, 316);
-			this.softwareTab.TabIndex = 11;
-			this.softwareTab.Text = "Software";
-			this.softwareTab.UseVisualStyleBackColor = true;
+			this.panel1.Controls.Add(this.osGroupBox);
+			this.panel1.Controls.Add(this.biosGroupBox);
+			this.panel1.Controls.Add(this.motherboardGroupBox);
+			this.panel1.Controls.Add(this.ramGroupBox);
+			this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
+			this.panel1.Location = new System.Drawing.Point(0, 0);
+			this.panel1.Name = "panel1";
+			this.panel1.Size = new System.Drawing.Size(846, 196);
+			this.panel1.TabIndex = 9;
 			// 
 			// ViewAssetForm
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(846, 569);
-			this.Controls.Add(this.biosGroupBox);
-			this.Controls.Add(this.motherboardGroupBox);
-			this.Controls.Add(this.ramGroupBox);
-			this.Controls.Add(this.osGroupBox);
+			this.AutoSize = true;
+			this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+			this.ClientSize = new System.Drawing.Size(846, 577);
+			this.Controls.Add(this.panel1);
 			this.Controls.Add(this.tabPanel);
 			this.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+			this.MaximizeBox = false;
+			this.MaximumSize = new System.Drawing.Size(862, 800);
+			this.MinimumSize = new System.Drawing.Size(862, 616);
 			this.Name = "ViewAssetForm";
 			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
 			this.Text = "Form1";
@@ -553,6 +584,7 @@
 			this.ramGroupBox.ResumeLayout(false);
 			this.motherboardGroupBox.ResumeLayout(false);
 			this.biosGroupBox.ResumeLayout(false);
+			this.panel1.ResumeLayout(false);
 			this.ResumeLayout(false);
 
 		}
@@ -601,5 +633,6 @@
 		private System.Windows.Forms.TabPage monitorsTab;
 		private System.Windows.Forms.TabPage printersTab;
 		private System.Windows.Forms.TabPage softwareTab;
+		private System.Windows.Forms.Panel panel1;
 	}
 }

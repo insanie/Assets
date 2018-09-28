@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
+using System.Windows.Forms;
+using System.Reflection;
 
 namespace ClientAppNamespace
 {
@@ -210,6 +212,53 @@ namespace ClientAppNamespace
 				sqlOutput.Close();
 			}
 			return outputList;
+		}
+	}
+	public class drawer
+	{
+		public byte labelHeight { get; }
+		public byte labelWidth { get; }
+		public byte labelStaticWidth { get; }
+		public drawer(byte height, byte width, byte staticWidth)
+		{
+			labelHeight = height;
+			labelWidth = width;
+			labelStaticWidth = staticWidth;
+		}
+		public void createLabel(List<dboTable> data, TabPage panel, String tabType, String fieldName, Int16 ypos)
+		{
+			Byte positionIncrement = 1;
+			Dictionary<String, Label> names = new Dictionary<String, Label>();
+			foreach (dboTable tmp in data)
+			{
+				String name = $"{tabType}_{fieldName}Label" + Convert.ToString(positionIncrement);
+				names[name] = new Label();
+				panel.Controls.Add(names[name]);
+				names[name].Location = new System.Drawing.Point(labelStaticWidth + 1 + labelWidth * (positionIncrement - 1), ypos);
+				names[name].Margin = new Padding(0);
+				names[name].Name = name;
+				names[name].Size = new System.Drawing.Size(labelWidth, labelHeight);
+				names[name].Text = Convert.ToString(typeof(dboTable).GetProperty(fieldName).GetValue(tmp, null));
+				positionIncrement++;
+			}
+		}
+		public void createStaticLabel(String[] namesList, TabPage panel, String tabType)
+		{
+			Byte positionIncrement = 1;
+			Dictionary<String, Label> names = new Dictionary<String, Label>();
+			foreach (String tmp in namesList)
+			{
+				String name = $"{tabType}_{tmp}Label" + Convert.ToString(positionIncrement);
+				names[name] = new Label();
+				panel.Controls.Add(names[name]);
+				names[name].BorderStyle = BorderStyle.Fixed3D;
+				names[name].Location = new System.Drawing.Point(1, 1 + labelHeight * (positionIncrement - 1));
+				names[name].Margin = new Padding(0);
+				names[name].Name = name;
+				names[name].Size = new System.Drawing.Size(labelStaticWidth, labelHeight);
+				names[name].Text = tmp;
+				positionIncrement++;
+			}
 		}
 	}
 }
