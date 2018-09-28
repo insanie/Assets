@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Windows.Forms;
-using System.Reflection;
+using System.Configuration;
 
-namespace ClientAppNamespace
+namespace Assets
 {
 	public class dboTable
 	{
@@ -259,6 +259,21 @@ namespace ClientAppNamespace
 				names[name].Text = tmp;
 				positionIncrement++;
 			}
+		}
+	}
+	public class settings
+	{
+		public static string getParameter(string name)
+		{
+			var config = ConfigurationManager.OpenExeConfiguration(ConfigurationUserLevel.None);
+			String value = config.AppSettings.Settings[name].Value;
+			return value;
+		}
+		public static void setParameter(string name, string value)
+		{
+			var config = ConfigurationManager.OpenExeConfiguration(ConfigurationUserLevel.None);
+			config.AppSettings.Settings[name].Value = value;
+			config.Save(ConfigurationSaveMode.Modified);
 		}
 	}
 }

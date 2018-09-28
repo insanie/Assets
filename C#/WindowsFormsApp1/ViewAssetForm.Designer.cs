@@ -1,4 +1,4 @@
-﻿namespace ClientAppNamespace
+﻿namespace Assets
 {
 	partial class ViewAssetForm
 	{

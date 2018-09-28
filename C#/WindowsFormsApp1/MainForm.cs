@@ -7,12 +7,13 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using System.Configuration;
 
-namespace ClientAppNamespace
+namespace Assets
 {
 	public partial class MainForm : Form
 	{
-		String connectionLine = "Server = dc-sql12-db\\db; Database = Inventory; Trusted_Connection = Yes; Integrated Security = SSPI;";
+		String connectionLine = $"Server = '{ConfigurationManager.AppSettings["server"]}'; Database = '{ConfigurationManager.AppSettings["database"]}'; Trusted_Connection = Yes; Integrated Security = SSPI;";
 		List<dboTable> queryResultsList = new List<dboTable>();
 		public MainForm()
 		{
@@ -94,6 +95,12 @@ namespace ClientAppNamespace
 					loadEntryButton_Click(this, new EventArgs());
 				}
 			}
+		}
+
+		private void settingsButton_Click(object sender, EventArgs e)
+		{
+			SettingsForm Settings = new SettingsForm();
+			Settings.Show();
 		}
 
 		// test shit below
