@@ -225,7 +225,7 @@ namespace ClientAppNamespace
 			labelWidth = width;
 			labelStaticWidth = staticWidth;
 		}
-		public void createLabel(List<dboTable> data, TabPage panel, String tabType, String fieldName, Int16 ypos)
+		public void createLabel(List<dboTable> data, TabPage panel, String tabType, String fieldName, Int16 ypos, String suffix = "")
 		{
 			Byte positionIncrement = 1;
 			Dictionary<String, Label> names = new Dictionary<String, Label>();
@@ -238,7 +238,7 @@ namespace ClientAppNamespace
 				names[name].Margin = new Padding(0);
 				names[name].Name = name;
 				names[name].Size = new System.Drawing.Size(labelWidth, labelHeight);
-				names[name].Text = Convert.ToString(typeof(dboTable).GetProperty(fieldName).GetValue(tmp, null));
+				names[name].Text = Convert.ToString(typeof(dboTable).GetProperty(fieldName).GetValue(tmp, null) + suffix);
 				positionIncrement++;
 			}
 		}

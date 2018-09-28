@@ -41,14 +41,14 @@ namespace ClientAppNamespace
 			ram_maxLabel.Text = Convert.ToString(sentData[0][0].ram_max) + " GB";
 
 			// creating drawer object
-			drawer current = new drawer(20, 250, 120);
+			drawer current = new drawer(20, 220, 120);
 
 			// cpu tab labels creating
 			// static ones
 			current.createStaticLabel(new[] {"Model", "Frequency", "Cores", "Threads", "Socket"}, cpuTab, "cpu");
 			// value ones
 			current.createLabel(sentData[2], cpuTab, "cpu", "model", 1);
-			current.createLabel(sentData[2], cpuTab, "cpu", "freq", 21);
+			current.createLabel(sentData[2], cpuTab, "cpu", "freq", 21, " MHz");
 			current.createLabel(sentData[2], cpuTab, "cpu", "cores", 41);
 			current.createLabel(sentData[2], cpuTab, "cpu", "threads", 61);
 			current.createLabel(sentData[2], cpuTab, "cpu", "socket", 81);
@@ -58,8 +58,8 @@ namespace ClientAppNamespace
 			current.createStaticLabel(new[] {"Slot", "Frequency", "Size", "Vendor", "Model"}, dimmTab, "dimm");
 			// value ones
 			current.createLabel(sentData[5], dimmTab, "dimm", "slot", 1);
-			current.createLabel(sentData[5], dimmTab, "dimm", "freq", 21);
-			current.createLabel(sentData[5], dimmTab, "dimm", "size", 41);
+			current.createLabel(sentData[5], dimmTab, "dimm", "freq", 21, " MHz");
+			current.createLabel(sentData[5], dimmTab, "dimm", "size", 41, " GB");
 			current.createLabel(sentData[5], dimmTab, "dimm", "vendor", 61);
 			current.createLabel(sentData[5], dimmTab, "dimm", "model", 81);
 
@@ -68,7 +68,7 @@ namespace ClientAppNamespace
 			current.createStaticLabel(new[] {"Model", "Size"}, drivesTab, "drives");
 			// value ones
 			current.createLabel(sentData[3], drivesTab, "drives", "model", 1);
-			current.createLabel(sentData[3], drivesTab, "drives", "size", 21);
+			current.createLabel(sentData[3], drivesTab, "drives", "size", 21, " GB");
 
 			// partitions tab labels creating
 			// static ones
@@ -76,9 +76,9 @@ namespace ClientAppNamespace
 			// value ones
 			current.createLabel(sentData[4], partitionsTab, "partitions", "letter", 1);
 			current.createLabel(sentData[4], partitionsTab, "partitions", "filesys", 21);
-			current.createLabel(sentData[4], partitionsTab, "partitions", "size", 41);
-			current.createLabel(sentData[4], partitionsTab, "partitions", "used", 61);
-			current.createLabel(sentData[4], partitionsTab, "partitions", "free", 81);
+			current.createLabel(sentData[4], partitionsTab, "partitions", "size", 41, " GB");
+			current.createLabel(sentData[4], partitionsTab, "partitions", "used", 61, " GB");
+			current.createLabel(sentData[4], partitionsTab, "partitions", "free", 81, " GB");
 
 			// networking tab labels creating
 			// static ones
@@ -118,10 +118,59 @@ namespace ClientAppNamespace
 			current.createLabel(sentData[9], printersTab, "printers", "shared", 41);
 			current.createLabel(sentData[9], printersTab, "printers", "port", 61);
 		}
-
 		private void ViewAssetForm_Load(object sender, EventArgs e)
 		{
 			
+		}
+		private void cpuTab_Enter(object sender, EventArgs e)
+		{
+			Height = 391;
+			tabPanel.Height = 148;
+		}
+		private void dimmTab_Enter(object sender, EventArgs e)
+		{
+			Height = 391;
+			tabPanel.Height = 148;
+		}
+		private void drivesTab_Enter(object sender, EventArgs e)
+		{
+			Height = 331;
+			tabPanel.Height = 88;
+		}
+		private void partitionsTab_Enter(object sender, EventArgs e)
+		{
+			Height = 391;
+			tabPanel.Height = 148;
+		}
+		private void networkingTab_Enter(object sender, EventArgs e)
+		{
+			Height = 471;
+			tabPanel.Height = 228;
+		}
+		private void gpuTab_Enter(object sender, EventArgs e)
+		{
+			Height = 331;
+			tabPanel.Height = 88;
+		}
+		private void monitorsTab_Enter(object sender, EventArgs e)
+		{
+			Height = 351;
+			tabPanel.Height = 108;
+		}
+		private void printersTab_Enter(object sender, EventArgs e)
+		{
+			Height = 371;
+			tabPanel.Height = 128;
+		}
+		private void usersTab_Enter(object sender, EventArgs e)
+		{
+			Height = 471;
+			tabPanel.Height = 228;
+		}
+		private void softwareTab_Enter(object sender, EventArgs e)
+		{
+			Height = 471;
+			tabPanel.Height = 228;
 		}
 	}
 }
