@@ -4,7 +4,7 @@ using System.Data.SqlClient;
 using System.Windows.Forms;
 using System.Configuration;
 
-namespace Assets
+namespace AssetsClientApp
 {
 	public class dboTable
 	{

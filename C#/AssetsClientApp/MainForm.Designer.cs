@@ -1,4 +1,4 @@
-﻿namespace Assets
+﻿namespace AssetsClientApp
 {
 	partial class MainForm
 	{

@@ -9,7 +9,7 @@ using System.Windows.Forms;
 using System.Data.SqlClient;
 using System.Configuration;
 
-namespace Assets
+namespace AssetsClientApp
 {
 	public partial class MainForm : Form
 	{

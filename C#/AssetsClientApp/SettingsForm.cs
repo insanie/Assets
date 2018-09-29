@@ -8,7 +8,7 @@ using System.Text;
 using System.Windows.Forms;
 using System.Configuration;
 
-namespace Assets
+namespace AssetsClientApp
 {
 	public partial class SettingsForm : Form
 	{

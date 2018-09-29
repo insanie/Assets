@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Windows.Forms;
 
-namespace Assets
+namespace AssetsClientApp
 {
 	static class Program
 	{

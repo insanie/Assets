@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 
-namespace Assets
+namespace AssetsClientApp
 {
 	public partial class ViewAssetForm : Form
 	{
