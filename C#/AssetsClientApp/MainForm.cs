@@ -13,8 +13,11 @@ namespace AssetsClientApp
 {
 	public partial class MainForm : Form
 	{
+		// defining connection string based on settings
 		String connectionLine = $"Server = '{ConfigurationManager.AppSettings["server"]}'; Database = '{ConfigurationManager.AppSettings["database"]}'; Trusted_Connection = Yes; Integrated Security = SSPI;";
+		// defining list for query results here so we can use it within almost all the classes
 		List<dboTable> queryResultsList = new List<dboTable>();
+
 		public MainForm()
 		{
 			InitializeComponent();
@@ -27,6 +30,7 @@ namespace AssetsClientApp
 
 		private void searchButton_Click(object sender, EventArgs e)
 		{
+			// getting list of scandates for searched hostname
 			queryResultsList = dboTable.getFromSql($"SELECT * FROM dbo.main WHERE hostname = '{searchBox.Text}' ORDER BY id DESC;", connectionLine, "main");
 			if (queryResultsList.Count != 0)
 			{
@@ -51,6 +55,7 @@ namespace AssetsClientApp
 			loadEntryButton.Enabled = true;
 		}
 
+		// preparing data here to transfer to AssetForm
 		private void loadEntryButton_Click(object sender, EventArgs e)
 		{
 			List<List<dboTable>> sentData = new List<List<dboTable>>();

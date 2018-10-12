@@ -4,8 +4,11 @@ using System.Data.SqlClient;
 using System.Windows.Forms;
 using System.Configuration;
 
+// all classes that are used anywhere in the code are stored here
 namespace AssetsClientApp
 {
+	// class for regular output from tables
+	// contains all possible properties to store values from every possible REGULAR table (for example 'SELECT *', not 'SELECT some_field_1, some_field_2')
 	public class dboTable
 	{
 		public Int64 id { get; set; }
@@ -64,10 +67,13 @@ namespace AssetsClientApp
 		public String ver { get; set; }
 		public String path { get; set; }
 		public Boolean stat { get; set; }
+		// constructor function, requires SqlDataReader object to parse and fill the properties
 		public dboTable(SqlDataReader inputObj, String tableType)
 		{
 			switch (tableType)
 			{
+				// filling particular field depending on specific table output
+				// properties that left null will stay null
 				case "main":
 					id = inputObj.GetInt32(0);
 					hostname = inputObj.GetString(1);
@@ -94,6 +100,7 @@ namespace AssetsClientApp
 					id_parent = inputObj.GetInt32(1);
 					fullname = inputObj.GetString(2);
 					place = inputObj.GetByte(3);
+					// in case db value is null, because cannot GetDateTime(null)
 					if (!inputObj.IsDBNull(4))
 					{
 						logontime = inputObj.GetDateTime(4);
@@ -194,6 +201,9 @@ namespace AssetsClientApp
 			}
 
 		}
+		// gets list of objects of this class, establishes sql connection on its own, requires premade connection line, tableType defines table you want the output from
+		// ofc you need the correct query that fits tableType and vice versa
+		// having static function that uses its own constuctor is quite weird so that stuff has to be redesigned
 		static public List<dboTable> getFromSql(String query, String connectionLine, String tableType)
 		{
 			List<dboTable> outputList = new List<dboTable>();
@@ -214,8 +224,10 @@ namespace AssetsClientApp
 			return outputList;
 		}
 	}
+	// class that drawes labels for multiple instances (e.g. dimms, hard drives, monitors, etc.)
 	public class drawer
 	{
+		// parameters that must be set within the constructor
 		public byte labelHeight { get; }
 		public byte labelWidth { get; }
 		public byte labelStaticWidth { get; }
@@ -225,9 +237,12 @@ namespace AssetsClientApp
 			labelWidth = width;
 			labelStaticWidth = staticWidth;
 		}
+		// creates labels with data from a particular property of every element of the list, requires TabPage to work, tabType only defines the name of each label (see the loop)
+		// ypos defines margin from the top (may be deprecated, I dunno), suffix lets you add a string to the labels text ('GB', 'MHz', etc.)
 		public void createLabel(List<dboTable> data, TabPage panel, String tabType, String fieldName, Int16 ypos, String suffix = "")
 		{
 			Byte positionIncrement = 1;
+			// using dictionary to name labels dynamically
 			Dictionary<String, Label> names = new Dictionary<String, Label>();
 			foreach (dboTable tmp in data)
 			{
@@ -242,9 +257,11 @@ namespace AssetsClientApp
 				positionIncrement++;
 			}
 		}
+		// creates static labels (headers) with the text from array, requires TabPage to work, tabType only defines the name of each label (see the loop)
 		public void createStaticLabel(String[] namesList, TabPage panel, String tabType)
 		{
 			Byte positionIncrement = 1;
+			// using dictionary to name labels dynamically
 			Dictionary<String, Label> names = new Dictionary<String, Label>();
 			foreach (String tmp in namesList)
 			{
@@ -261,6 +278,8 @@ namespace AssetsClientApp
 			}
 		}
 	}
+	// class for static functions that get and set parameters from conf file
+	// no particular object declaring is needed
 	public class settings
 	{
 		public static string getParameter(string name)
