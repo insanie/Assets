@@ -32,5 +32,21 @@ namespace AssetsClientApp
 			settings.setParameter("database", databaseSettingsTextBox.Text);
 			Close();
 		}
+
+		private void serverSettingsTextBox_KeyDown(object sender, KeyEventArgs e)
+		{
+			if (e.KeyCode == Keys.Enter)
+			{
+				saveSettingsButton_Click(this, new EventArgs());
+			}
+		}
+
+		private void databaseSettingsTextBox_KeyDown(object sender, KeyEventArgs e)
+		{
+			if (e.KeyCode == Keys.Enter)
+			{
+				saveSettingsButton_Click(this, new EventArgs());
+			}
+		}
 	}
 }

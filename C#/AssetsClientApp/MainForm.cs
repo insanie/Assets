@@ -14,7 +14,7 @@ namespace AssetsClientApp
 	public partial class MainForm : Form
 	{
 		// defining connection string based on settings
-		private String connectionLine { get; set; }
+		private String connectionLine = $"Server = '{settings.getParameter("server")}'; Database = '{settings.getParameter("database")}'; Trusted_Connection = Yes; Integrated Security = SSPI;";
 		// defining list for query results here so we can use it within almost all the classes
 		private List<dboTable> queryResultsList { get; set; }
 
@@ -30,7 +30,6 @@ namespace AssetsClientApp
 
 		private void searchButton_Click(object sender, EventArgs e)
 		{
-			connectionLine = $"Server = '{ConfigurationManager.AppSettings["server"]}'; Database = '{ConfigurationManager.AppSettings["database"]}'; Trusted_Connection = Yes; Integrated Security = SSPI;";
 			// getting list of scandates for searched hostname
 			queryResultsList = dboTable.getFromSql($"SELECT * FROM dbo.main WHERE hostname = '{searchBox.Text}' ORDER BY id DESC;", connectionLine, "main");
 			if (queryResultsList.Count != 0)
@@ -59,7 +58,6 @@ namespace AssetsClientApp
 		// preparing data here to transfer to AssetForm
 		private void loadEntryButton_Click(object sender, EventArgs e)
 		{
-			connectionLine = $"Server = '{ConfigurationManager.AppSettings["server"]}'; Database = '{ConfigurationManager.AppSettings["database"]}'; Trusted_Connection = Yes; Integrated Security = SSPI;";
 			LoadingForm LoadSplashForm = new LoadingForm(queryResultsList[searchResultsBox.SelectedIndex].id, connectionLine);
 			LoadSplashForm.ShowDialog();
 			ViewAssetForm AssetForm = new ViewAssetForm(LoadSplashForm.sentData);
@@ -98,6 +96,8 @@ namespace AssetsClientApp
 		{
 			SettingsForm Settings = new SettingsForm();
 			Settings.ShowDialog();
+			connectionLine = $"Server = '{settings.getParameter("server")}'; Database = '{settings.getParameter("database")}'; Trusted_Connection = Yes; Integrated Security = SSPI;";
+			searchBox.Focus();
 		}
 
 		// test shit below

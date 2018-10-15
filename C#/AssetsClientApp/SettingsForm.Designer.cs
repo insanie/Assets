@@ -52,6 +52,7 @@
 			this.serverSettingsTextBox.Name = "serverSettingsTextBox";
 			this.serverSettingsTextBox.Size = new System.Drawing.Size(100, 25);
 			this.serverSettingsTextBox.TabIndex = 1;
+			this.serverSettingsTextBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.serverSettingsTextBox_KeyDown);
 			// 
 			// databaseSettingsTextBox
 			// 
@@ -59,6 +60,7 @@
 			this.databaseSettingsTextBox.Name = "databaseSettingsTextBox";
 			this.databaseSettingsTextBox.Size = new System.Drawing.Size(100, 25);
 			this.databaseSettingsTextBox.TabIndex = 2;
+			this.databaseSettingsTextBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.databaseSettingsTextBox_KeyDown);
 			// 
 			// serverSettingsLabel
 			// 
@@ -85,6 +87,7 @@
 			this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
 			this.ClientSize = new System.Drawing.Size(212, 115);
+			this.ControlBox = false;
 			this.Controls.Add(this.databaseSettingsLabel);
 			this.Controls.Add(this.serverSettingsLabel);
 			this.Controls.Add(this.databaseSettingsTextBox);
@@ -94,7 +97,10 @@
 			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
 			this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
 			this.MaximizeBox = false;
+			this.MinimizeBox = false;
 			this.Name = "SettingsForm";
+			this.ShowIcon = false;
+			this.ShowInTaskbar = false;
 			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
 			this.Text = "Settings";
 			this.Load += new System.EventHandler(this.SettingsForm_Load);
