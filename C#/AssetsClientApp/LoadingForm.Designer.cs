@@ -37,40 +37,37 @@
 			// 
 			// sqlQueryLabel
 			// 
-			this.sqlQueryLabel.AutoSize = true;
-			this.sqlQueryLabel.Location = new System.Drawing.Point(127, 21);
+			this.sqlQueryLabel.Location = new System.Drawing.Point(0, 0);
 			this.sqlQueryLabel.Margin = new System.Windows.Forms.Padding(0);
 			this.sqlQueryLabel.Name = "sqlQueryLabel";
-			this.sqlQueryLabel.Size = new System.Drawing.Size(91, 17);
+			this.sqlQueryLabel.Size = new System.Drawing.Size(350, 25);
 			this.sqlQueryLabel.TabIndex = 0;
 			this.sqlQueryLabel.Text = "sqlQueryLabel";
 			this.sqlQueryLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
 			// 
 			// loadingCommentLabel
 			// 
-			this.loadingCommentLabel.AutoSize = true;
-			this.loadingCommentLabel.Location = new System.Drawing.Point(10, 92);
+			this.loadingCommentLabel.Location = new System.Drawing.Point(9, 54);
 			this.loadingCommentLabel.Margin = new System.Windows.Forms.Padding(0);
 			this.loadingCommentLabel.Name = "loadingCommentLabel";
-			this.loadingCommentLabel.Size = new System.Drawing.Size(94, 17);
+			this.loadingCommentLabel.Size = new System.Drawing.Size(150, 17);
 			this.loadingCommentLabel.TabIndex = 1;
 			this.loadingCommentLabel.Text = "Loading data...";
 			this.loadingCommentLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
 			// 
 			// loadingPercentLabel
 			// 
-			this.loadingPercentLabel.AutoSize = true;
-			this.loadingPercentLabel.Location = new System.Drawing.Point(215, 92);
+			this.loadingPercentLabel.Location = new System.Drawing.Point(184, 54);
 			this.loadingPercentLabel.Margin = new System.Windows.Forms.Padding(0);
 			this.loadingPercentLabel.Name = "loadingPercentLabel";
-			this.loadingPercentLabel.Size = new System.Drawing.Size(126, 17);
+			this.loadingPercentLabel.Size = new System.Drawing.Size(157, 17);
 			this.loadingPercentLabel.TabIndex = 2;
 			this.loadingPercentLabel.Text = "loadingPercentLabel";
 			this.loadingPercentLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
 			// 
 			// loadingProgressBar
 			// 
-			this.loadingProgressBar.Location = new System.Drawing.Point(13, 52);
+			this.loadingProgressBar.Location = new System.Drawing.Point(12, 28);
 			this.loadingProgressBar.Name = "loadingProgressBar";
 			this.loadingProgressBar.Size = new System.Drawing.Size(325, 23);
 			this.loadingProgressBar.TabIndex = 3;
@@ -85,7 +82,7 @@
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
-			this.ClientSize = new System.Drawing.Size(350, 134);
+			this.ClientSize = new System.Drawing.Size(350, 78);
 			this.ControlBox = false;
 			this.Controls.Add(this.loadingProgressBar);
 			this.Controls.Add(this.loadingPercentLabel);
@@ -104,7 +101,6 @@
 			this.Load += new System.EventHandler(this.LoadingForm_Load);
 			this.Shown += new System.EventHandler(this.LoadingForm_Shown);
 			this.ResumeLayout(false);
-			this.PerformLayout();
 
 		}
 
