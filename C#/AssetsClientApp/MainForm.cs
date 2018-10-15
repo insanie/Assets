@@ -14,9 +14,9 @@ namespace AssetsClientApp
 	public partial class MainForm : Form
 	{
 		// defining connection string based on settings
-		String connectionLine = $"Server = '{ConfigurationManager.AppSettings["server"]}'; Database = '{ConfigurationManager.AppSettings["database"]}'; Trusted_Connection = Yes; Integrated Security = SSPI;";
+		private String connectionLine { get; set; }
 		// defining list for query results here so we can use it within almost all the classes
-		List<dboTable> queryResultsList = new List<dboTable>();
+		private List<dboTable> queryResultsList { get; set; }
 
 		public MainForm()
 		{
@@ -30,6 +30,7 @@ namespace AssetsClientApp
 
 		private void searchButton_Click(object sender, EventArgs e)
 		{
+			connectionLine = $"Server = '{ConfigurationManager.AppSettings["server"]}'; Database = '{ConfigurationManager.AppSettings["database"]}'; Trusted_Connection = Yes; Integrated Security = SSPI;";
 			// getting list of scandates for searched hostname
 			queryResultsList = dboTable.getFromSql($"SELECT * FROM dbo.main WHERE hostname = '{searchBox.Text}' ORDER BY id DESC;", connectionLine, "main");
 			if (queryResultsList.Count != 0)
@@ -58,19 +59,10 @@ namespace AssetsClientApp
 		// preparing data here to transfer to AssetForm
 		private void loadEntryButton_Click(object sender, EventArgs e)
 		{
-			List<List<dboTable>> sentData = new List<List<dboTable>>();
-			sentData.Add(dboTable.getFromSql($"SELECT * FROM dbo.main WHERE id = {queryResultsList[searchResultsBox.SelectedIndex].id};", connectionLine, "main"));
-			sentData.Add(dboTable.getFromSql($"SELECT * FROM dbo.usr WHERE id_parent = {queryResultsList[searchResultsBox.SelectedIndex].id};", connectionLine, "usr"));
-			sentData.Add(dboTable.getFromSql($"SELECT * FROM dbo.cpu WHERE id_parent = {queryResultsList[searchResultsBox.SelectedIndex].id};", connectionLine, "cpu"));
-			sentData.Add(dboTable.getFromSql($"SELECT * FROM dbo.drv WHERE id_parent = {queryResultsList[searchResultsBox.SelectedIndex].id};", connectionLine, "drv"));
-			sentData.Add(dboTable.getFromSql($"SELECT * FROM dbo.vol WHERE id_parent = {queryResultsList[searchResultsBox.SelectedIndex].id};", connectionLine, "vol"));
-			sentData.Add(dboTable.getFromSql($"SELECT * FROM dbo.ram WHERE id_parent = {queryResultsList[searchResultsBox.SelectedIndex].id};", connectionLine, "ram"));
-			sentData.Add(dboTable.getFromSql($"SELECT * FROM dbo.net WHERE id_parent = {queryResultsList[searchResultsBox.SelectedIndex].id};", connectionLine, "net"));
-			sentData.Add(dboTable.getFromSql($"SELECT * FROM dbo.gpu WHERE id_parent = {queryResultsList[searchResultsBox.SelectedIndex].id};", connectionLine, "gpu"));
-			sentData.Add(dboTable.getFromSql($"SELECT * FROM dbo.mon WHERE id_parent = {queryResultsList[searchResultsBox.SelectedIndex].id};", connectionLine, "mon"));
-			sentData.Add(dboTable.getFromSql($"SELECT * FROM dbo.prn WHERE id_parent = {queryResultsList[searchResultsBox.SelectedIndex].id};", connectionLine, "prn"));
-			sentData.Add(dboTable.getFromSql($"SELECT * FROM dbo.soft WHERE id_parent = {queryResultsList[searchResultsBox.SelectedIndex].id};", connectionLine, "soft"));
-			ViewAssetForm AssetForm = new ViewAssetForm(sentData);
+			connectionLine = $"Server = '{ConfigurationManager.AppSettings["server"]}'; Database = '{ConfigurationManager.AppSettings["database"]}'; Trusted_Connection = Yes; Integrated Security = SSPI;";
+			LoadingForm LoadSplashForm = new LoadingForm(queryResultsList[searchResultsBox.SelectedIndex].id, connectionLine);
+			LoadSplashForm.ShowDialog();
+			ViewAssetForm AssetForm = new ViewAssetForm(LoadSplashForm.sentData);
 			AssetForm.Show();
 		}
 
@@ -105,7 +97,7 @@ namespace AssetsClientApp
 		private void settingsButton_Click(object sender, EventArgs e)
 		{
 			SettingsForm Settings = new SettingsForm();
-			Settings.Show();
+			Settings.ShowDialog();
 		}
 
 		// test shit below
