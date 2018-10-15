@@ -1,4 +1,4 @@
-﻿namespace ClientAppNamespace
+﻿namespace AssetsClientApp
 {
 	partial class MainForm
 	{
@@ -32,6 +32,7 @@
 			this.searchBox = new System.Windows.Forms.TextBox();
 			this.searchButton = new System.Windows.Forms.Button();
 			this.loadEntryButton = new System.Windows.Forms.Button();
+			this.settingsButton = new System.Windows.Forms.Button();
 			this.SuspendLayout();
 			// 
 			// searchResultsBox
@@ -40,7 +41,7 @@
 			this.searchResultsBox.IntegralHeight = false;
 			this.searchResultsBox.ItemHeight = 17;
 			this.searchResultsBox.Location = new System.Drawing.Point(15, 77);
-			this.searchResultsBox.Margin = new System.Windows.Forms.Padding(3, 4, 3, 2);
+			this.searchResultsBox.Margin = new System.Windows.Forms.Padding(0);
 			this.searchResultsBox.Name = "searchResultsBox";
 			this.searchResultsBox.Size = new System.Drawing.Size(161, 131);
 			this.searchResultsBox.TabIndex = 4;
@@ -61,9 +62,9 @@
 			// searchButton
 			// 
 			this.searchButton.Location = new System.Drawing.Point(15, 44);
-			this.searchButton.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+			this.searchButton.Margin = new System.Windows.Forms.Padding(0);
 			this.searchButton.Name = "searchButton";
-			this.searchButton.Size = new System.Drawing.Size(161, 25);
+			this.searchButton.Size = new System.Drawing.Size(124, 25);
 			this.searchButton.TabIndex = 1;
 			this.searchButton.Text = "Search";
 			this.searchButton.UseVisualStyleBackColor = true;
@@ -73,7 +74,7 @@
 			// 
 			this.loadEntryButton.Enabled = false;
 			this.loadEntryButton.Location = new System.Drawing.Point(15, 211);
-			this.loadEntryButton.Margin = new System.Windows.Forms.Padding(3, 1, 3, 3);
+			this.loadEntryButton.Margin = new System.Windows.Forms.Padding(0);
 			this.loadEntryButton.Name = "loadEntryButton";
 			this.loadEntryButton.Size = new System.Drawing.Size(161, 25);
 			this.loadEntryButton.TabIndex = 9;
@@ -81,11 +82,22 @@
 			this.loadEntryButton.UseVisualStyleBackColor = true;
 			this.loadEntryButton.Click += new System.EventHandler(this.loadEntryButton_Click);
 			// 
+			// settingsButton
+			// 
+			this.settingsButton.Location = new System.Drawing.Point(151, 44);
+			this.settingsButton.Margin = new System.Windows.Forms.Padding(0);
+			this.settingsButton.Name = "settingsButton";
+			this.settingsButton.Size = new System.Drawing.Size(25, 25);
+			this.settingsButton.TabIndex = 10;
+			this.settingsButton.UseVisualStyleBackColor = true;
+			this.settingsButton.Click += new System.EventHandler(this.settingsButton_Click);
+			// 
 			// MainForm
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
 			this.ClientSize = new System.Drawing.Size(192, 251);
+			this.Controls.Add(this.settingsButton);
 			this.Controls.Add(this.searchBox);
 			this.Controls.Add(this.searchResultsBox);
 			this.Controls.Add(this.searchButton);
@@ -108,6 +120,7 @@
 		private System.Windows.Forms.TextBox searchBox;
 		private System.Windows.Forms.Button searchButton;
 		private System.Windows.Forms.Button loadEntryButton;
+		private System.Windows.Forms.Button settingsButton;
 	}
 }
 

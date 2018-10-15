@@ -3,11 +3,9 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
 using System.Windows.Forms;
 
-namespace ClientAppNamespace
+namespace AssetsClientApp
 {
 	public partial class ViewAssetForm : Form
 	{
@@ -169,55 +167,68 @@ namespace ClientAppNamespace
 			softwareGridView.Columns[2].Width = 252;
 			softwareGridView.Sort(softwareGridView.Columns[0], ListSortDirection.Ascending);
 		}
+		
 		private void ViewAssetForm_Load(object sender, EventArgs e)
 		{
 			
 		}
+
+		// maintaining form size depending on active tab
+		// is there any proper way to do that?
 		private void cpuTab_Enter(object sender, EventArgs e)
 		{
 			Height = 391;
 			tabPanel.Height = 148;
 		}
+
 		private void dimmTab_Enter(object sender, EventArgs e)
 		{
 			Height = 391;
 			tabPanel.Height = 148;
 		}
+
 		private void drivesTab_Enter(object sender, EventArgs e)
 		{
 			Height = 331;
 			tabPanel.Height = 88;
 		}
+
 		private void partitionsTab_Enter(object sender, EventArgs e)
 		{
 			Height = 411;
 			tabPanel.Height = 168;
 		}
+
 		private void networkingTab_Enter(object sender, EventArgs e)
 		{
 			Height = 471;
 			tabPanel.Height = 228;
 		}
+
 		private void gpuTab_Enter(object sender, EventArgs e)
 		{
 			Height = 331;
 			tabPanel.Height = 88;
 		}
+
 		private void monitorsTab_Enter(object sender, EventArgs e)
 		{
 			Height = 351;
 			tabPanel.Height = 108;
 		}
+
 		private void printersTab_Enter(object sender, EventArgs e)
 		{
 			Height = 371;
 			tabPanel.Height = 128;
 		}
+
 		private void usersTab_Enter(object sender, EventArgs e)
 		{
 			Height = 471;
 			tabPanel.Height = 228;
 		}
+
 		private void softwareTab_Enter(object sender, EventArgs e)
 		{
 			Height = 471;

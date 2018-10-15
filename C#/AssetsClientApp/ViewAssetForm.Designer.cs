@@ -1,4 +1,4 @@
-﻿namespace ClientAppNamespace
+﻿namespace AssetsClientApp
 {
 	partial class ViewAssetForm
 	{
@@ -28,8 +28,8 @@
 		/// </summary>
 		private void InitializeComponent()
 		{
-			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
 			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
 			this.tabPanel = new System.Windows.Forms.TabControl();
 			this.cpuTab = new System.Windows.Forms.TabPage();
 			this.dimmTab = new System.Windows.Forms.TabPage();
@@ -40,6 +40,7 @@
 			this.monitorsTab = new System.Windows.Forms.TabPage();
 			this.printersTab = new System.Windows.Forms.TabPage();
 			this.usersTab = new System.Windows.Forms.TabPage();
+			this.usersGridView = new System.Windows.Forms.DataGridView();
 			this.softwareTab = new System.Windows.Forms.TabPage();
 			this.softwareGridView = new System.Windows.Forms.DataGridView();
 			this.os_langLabel = new System.Windows.Forms.Label();
@@ -75,9 +76,9 @@
 			this.bios_verStaticLabel = new System.Windows.Forms.Label();
 			this.bios_nameLabel = new System.Windows.Forms.Label();
 			this.groupsPanel = new System.Windows.Forms.Panel();
-			this.usersGridView = new System.Windows.Forms.DataGridView();
 			this.tabPanel.SuspendLayout();
 			this.usersTab.SuspendLayout();
+			((System.ComponentModel.ISupportInitialize)(this.usersGridView)).BeginInit();
 			this.softwareTab.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.softwareGridView)).BeginInit();
 			this.osGroupBox.SuspendLayout();
@@ -85,7 +86,6 @@
 			this.motherboardGroupBox.SuspendLayout();
 			this.biosGroupBox.SuspendLayout();
 			this.groupsPanel.SuspendLayout();
-			((System.ComponentModel.ISupportInitialize)(this.usersGridView)).BeginInit();
 			this.SuspendLayout();
 			// 
 			// tabPanel
@@ -218,6 +218,37 @@
 			this.usersTab.Text = "Users";
 			this.usersTab.UseVisualStyleBackColor = true;
 			this.usersTab.Enter += new System.EventHandler(this.usersTab_Enter);
+			// 
+			// usersGridView
+			// 
+			this.usersGridView.AllowUserToAddRows = false;
+			this.usersGridView.AllowUserToDeleteRows = false;
+			this.usersGridView.AllowUserToOrderColumns = true;
+			this.usersGridView.BackgroundColor = System.Drawing.SystemColors.Control;
+			this.usersGridView.BorderStyle = System.Windows.Forms.BorderStyle.None;
+			this.usersGridView.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Sunken;
+			this.usersGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+			dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+			dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+			dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
+			dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+			dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+			dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+			this.usersGridView.DefaultCellStyle = dataGridViewCellStyle1;
+			this.usersGridView.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.usersGridView.Location = new System.Drawing.Point(0, 0);
+			this.usersGridView.Margin = new System.Windows.Forms.Padding(0);
+			this.usersGridView.MultiSelect = false;
+			this.usersGridView.Name = "usersGridView";
+			this.usersGridView.ReadOnly = true;
+			this.usersGridView.RowHeadersVisible = false;
+			this.usersGridView.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
+			this.usersGridView.RowTemplate.DefaultCellStyle.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+			this.usersGridView.RowTemplate.Height = 20;
+			this.usersGridView.RowTemplate.ReadOnly = true;
+			this.usersGridView.Size = new System.Drawing.Size(849, 118);
+			this.usersGridView.TabIndex = 1;
 			// 
 			// softwareTab
 			// 
@@ -618,37 +649,6 @@
 			this.groupsPanel.Size = new System.Drawing.Size(857, 201);
 			this.groupsPanel.TabIndex = 9;
 			// 
-			// usersGridView
-			// 
-			this.usersGridView.AllowUserToAddRows = false;
-			this.usersGridView.AllowUserToDeleteRows = false;
-			this.usersGridView.AllowUserToOrderColumns = true;
-			this.usersGridView.BackgroundColor = System.Drawing.SystemColors.Control;
-			this.usersGridView.BorderStyle = System.Windows.Forms.BorderStyle.None;
-			this.usersGridView.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Sunken;
-			this.usersGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-			dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-			dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-			dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
-			dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-			dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-			dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-			this.usersGridView.DefaultCellStyle = dataGridViewCellStyle1;
-			this.usersGridView.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.usersGridView.Location = new System.Drawing.Point(0, 0);
-			this.usersGridView.Margin = new System.Windows.Forms.Padding(0);
-			this.usersGridView.MultiSelect = false;
-			this.usersGridView.Name = "usersGridView";
-			this.usersGridView.ReadOnly = true;
-			this.usersGridView.RowHeadersVisible = false;
-			this.usersGridView.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
-			this.usersGridView.RowTemplate.DefaultCellStyle.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-			this.usersGridView.RowTemplate.Height = 20;
-			this.usersGridView.RowTemplate.ReadOnly = true;
-			this.usersGridView.Size = new System.Drawing.Size(849, 118);
-			this.usersGridView.TabIndex = 1;
-			// 
 			// ViewAssetForm
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
@@ -660,11 +660,12 @@
 			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
 			this.MaximizeBox = false;
 			this.Name = "ViewAssetForm";
-			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
 			this.Text = "Form1";
 			this.Load += new System.EventHandler(this.ViewAssetForm_Load);
 			this.tabPanel.ResumeLayout(false);
 			this.usersTab.ResumeLayout(false);
+			((System.ComponentModel.ISupportInitialize)(this.usersGridView)).EndInit();
 			this.softwareTab.ResumeLayout(false);
 			((System.ComponentModel.ISupportInitialize)(this.softwareGridView)).EndInit();
 			this.osGroupBox.ResumeLayout(false);
@@ -672,7 +673,6 @@
 			this.motherboardGroupBox.ResumeLayout(false);
 			this.biosGroupBox.ResumeLayout(false);
 			this.groupsPanel.ResumeLayout(false);
-			((System.ComponentModel.ISupportInitialize)(this.usersGridView)).EndInit();
 			this.ResumeLayout(false);
 
 		}
