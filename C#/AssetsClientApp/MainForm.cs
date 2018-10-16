@@ -45,7 +45,10 @@ namespace AssetsClientApp
 
 		private void searchResultsBox_SelectedIndexChanged(object sender, EventArgs e)
 		{
+			if ((searchResultsBox.GetItemText(searchResultsBox.SelectedItem)) != "No entries found")
+			{
 			loadEntryButton.Enabled = true;
+			}
 		}
 
 		// preparing data here to transfer to AssetForm

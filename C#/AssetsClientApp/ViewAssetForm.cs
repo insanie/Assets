@@ -139,9 +139,10 @@ namespace AssetsClientApp
 			usersDataSource.Columns.Add("Company");
 			usersDataSource.Columns.Add("Department");
 			usersDataSource.Columns.Add("Account");
-			foreach(dboTable tmp in sentData[1])
+			usersDataSource.Columns.Add("Job");
+			foreach (dboTable tmp in sentData[1])
 			{
-				usersDataSource.Rows.Add(tmp.place, tmp.fullname, tmp.logontime, tmp.company, tmp.department, tmp.account);
+				usersDataSource.Rows.Add(tmp.place, tmp.fullname, tmp.logontime, tmp.company, tmp.department, tmp.account, tmp.job);
 			}
 			usersGridView.DataSource = usersDataSource;
 			usersGridView.Columns[0].Width = 50;
@@ -150,6 +151,7 @@ namespace AssetsClientApp
 			usersGridView.Columns[3].Width = 170;
 			usersGridView.Columns[4].Width = 181;
 			usersGridView.Columns[5].Width = 90;
+			usersGridView.Columns[6].Width = 170;
 			usersGridView.Sort(usersGridView.Columns[0], ListSortDirection.Ascending);
 
 			// software tab list creating
