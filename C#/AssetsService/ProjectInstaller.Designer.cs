@@ -1,4 +1,4 @@
-﻿namespace AssetsPoller
+﻿namespace AssetsService
 {
 	partial class ProjectInstaller
 	{
@@ -28,6 +28,8 @@
 		/// </summary>
 		private void InitializeComponent()
 		{
+			this.Installers.Clear();
+			
 			this.assetsServiceProcessInstaller = new System.ServiceProcess.ServiceProcessInstaller();
 			this.assetsServiceInstaller = new System.ServiceProcess.ServiceInstaller();
 			// 
@@ -39,9 +41,9 @@
 			// 
 			// assetsServiceInstaller
 			// 
-			this.assetsServiceInstaller.Description = "A test service for Assets project";
-			this.assetsServiceInstaller.DisplayName = "AssetsPollerService";
-			this.assetsServiceInstaller.ServiceName = "AssetsPollerService";
+			this.assetsServiceInstaller.DisplayName = mainInfo.serviceName;
+			this.assetsServiceInstaller.Description = "A simple test service";
+			this.assetsServiceInstaller.ServiceName = mainInfo.serviceName;
 			// 
 			// ProjectInstaller
 			// 
@@ -52,7 +54,7 @@
 		}
 
 		#endregion
-
+		
 		private System.ServiceProcess.ServiceProcessInstaller assetsServiceProcessInstaller;
 		private System.ServiceProcess.ServiceInstaller assetsServiceInstaller;
 	}

@@ -1,4 +1,4 @@
-﻿namespace AssetsPoller
+﻿namespace AssetsService
 {
 	partial class MainService
 	{
@@ -28,18 +28,16 @@
 		/// </summary>
 		private void InitializeComponent()
 		{
-			this.assetsEventLog = new System.Diagnostics.EventLog();
+			ServiceName = mainInfo.serviceName;
+
+			/*this.assetsEventLog = new System.Diagnostics.EventLog();
 			((System.ComponentModel.ISupportInitialize)(this.assetsEventLog)).BeginInit();
-			// 
-			// MainService
-			// 
-			this.ServiceName = "AssetsPollerService";
-			((System.ComponentModel.ISupportInitialize)(this.assetsEventLog)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.assetsEventLog)).EndInit();*/
 
 		}
 
 		#endregion
 
-		private System.Diagnostics.EventLog assetsEventLog;
+		/*private System.Diagnostics.EventLog assetsEventLog;*/
 	}
 }

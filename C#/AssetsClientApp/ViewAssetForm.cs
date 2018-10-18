@@ -89,7 +89,15 @@ namespace AssetsClientApp
 				names[name].Margin = new Padding(0);
 				names[name].Name = name;
 				names[name].Size = new Size(current.labelWidth / 2, current.labelHeight - 4);
-				names[name].Value = Convert.ToInt32(tmp.used / tmp.size * 100);
+				// fix for NaN values as a result for dividing by 0
+				if (Double.IsNaN(tmp.used / tmp.size * 100))
+				{
+					names[name].Value = 0;
+				}
+				else
+				{
+					names[name].Value = Convert.ToInt32(tmp.used / tmp.size * 100);
+				}
 				positionIncrement++;
 			}
 
