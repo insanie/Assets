@@ -18,21 +18,12 @@ namespace AssetsService
 		private DateTime currentDate { get; set; }
 		private DateTime scheduledDate { get; set; }
 		private TimeSpan waitTime { get; set; }
-		private Thread mainWorker { get; set; }
+		private Thread mainThread { get; set; }
 		private Boolean plsStop = false;
-		private EventLog assetsEventLog { get; set; }
 
 		public MainService()
 		{
 			InitializeComponent();
-			
-			if (!EventLog.SourceExists(mainInfo.logSource))
-			{
-				EventLog.CreateEventSource(mainInfo.logSource, mainInfo.logName);
-			}
-			assetsEventLog = new EventLog();
-			assetsEventLog.Source = mainInfo.logSource;
-			assetsEventLog.Log = mainInfo.logName;
 		}
 
 		protected override void OnStart(string[] args)
@@ -52,14 +43,15 @@ namespace AssetsService
 				waitTime = scheduledDate.AddDays(1) - currentDate;
 			}*/
 
-			mainWorker = new Thread(scheduleLoop);
-			mainWorker.Start();
+			mainThread = new Thread(scheduleLoop);
+			mainThread.Start();
 		}
 
 		protected override void OnStop()
 		{
+			assetsEventLog.WriteEntry($"Stopping thread gently", EventLogEntryType.Information, 2);
 			plsStop = true;
-			mainWorker.Join();
+			mainThread.Join();
 			// writing to event log that the service has stopped
 			assetsEventLog.WriteEntry("Assets service stopped", EventLogEntryType.Information, 1);
 		}
@@ -74,7 +66,6 @@ namespace AssetsService
 			{
 				if (plsStop)
 				{
-					assetsEventLog.WriteEntry($"Stopping thread gently", EventLogEntryType.Information, 2);
 					return;
 				}
 				else
@@ -88,7 +79,7 @@ namespace AssetsService
 		private void onSchedule()
 		{
 			// scheduler event starts here
-			assetsEventLog.WriteEntry($"Assets poller timer event starts, default writing to {EventLog.Log}", EventLogEntryType.Information, 3);
+			assetsEventLog.WriteEntry($"Assets poller timer event starts, default writing to {EventLog.Log}, current writing to {EventLog.Log}", EventLogEntryType.Information, 3);
 
 			// start of scan process
 

@@ -28,16 +28,27 @@
 		/// </summary>
 		private void InitializeComponent()
 		{
-			ServiceName = mainInfo.serviceName;
-
-			/*this.assetsEventLog = new System.Diagnostics.EventLog();
+			// 
+			// MainService
+			// 
+			this.ServiceName = "Assets Service";
+			// 
+			// assetsEventLog
+			// 
+			this.assetsEventLog = new System.Diagnostics.EventLog();
 			((System.ComponentModel.ISupportInitialize)(this.assetsEventLog)).BeginInit();
-			((System.ComponentModel.ISupportInitialize)(this.assetsEventLog)).EndInit();*/
+			this.assetsEventLog.Log = mainInfo.logName;
+			this.assetsEventLog.Source = mainInfo.logSource;
+			if (!System.Diagnostics.EventLog.SourceExists(mainInfo.logSource))
+			{
+				System.Diagnostics.EventLog.CreateEventSource(mainInfo.logSource, mainInfo.logName);
+			}
+			((System.ComponentModel.ISupportInitialize)(this.assetsEventLog)).EndInit();
 
 		}
 
 		#endregion
 
-		/*private System.Diagnostics.EventLog assetsEventLog;*/
+		private System.Diagnostics.EventLog assetsEventLog;
 	}
 }

@@ -28,8 +28,6 @@
 		/// </summary>
 		private void InitializeComponent()
 		{
-			this.Installers.Clear();
-			
 			this.assetsServiceProcessInstaller = new System.ServiceProcess.ServiceProcessInstaller();
 			this.assetsServiceInstaller = new System.ServiceProcess.ServiceInstaller();
 			// 
@@ -48,7 +46,7 @@
 			// ProjectInstaller
 			// 
 			this.Installers.AddRange(new System.Configuration.Install.Installer[] {
-            this.assetsServiceProcessInstaller,
+			this.assetsServiceProcessInstaller,
             this.assetsServiceInstaller});
 
 		}
