@@ -237,7 +237,6 @@ namespace AssetsClientApp
 			labelHeight = height;
 			labelWidth = width;
 			labelStaticWidth = staticWidth;
-			//backColor = Control.DefaultBackColor;
 		}
 		// creates labels with data from a particular property of every element of the list, requires TabPage to work, tabType only defines the name of each label (see the loop)
 		// ypos defines margin from the top (may be deprecated, I dunno), suffix lets you add a string to the labels text ('GB', 'MHz', etc.)
