@@ -11,6 +11,7 @@ namespace AssetsClientApp
 			// filling the textboxes with values from conf file
 			serverSettingsTextBox.Text = settings.getParameter("server");
 			databaseSettingsTextBox.Text = settings.getParameter("database");
+			//serverSettingsTextBox.Focus();
 		}
 
 		private void SettingsForm_Load(object sender, EventArgs e)

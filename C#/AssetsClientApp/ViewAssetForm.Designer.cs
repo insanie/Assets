@@ -43,38 +43,38 @@
 			this.usersGridView = new System.Windows.Forms.DataGridView();
 			this.softwareTab = new System.Windows.Forms.TabPage();
 			this.softwareGridView = new System.Windows.Forms.DataGridView();
-			this.os_langLabel = new System.Windows.Forms.Label();
+			this.os_langLabel = new System.Windows.Forms.TextBox();
 			this.os_langStaticLabel = new System.Windows.Forms.Label();
-			this.os_buildLabel = new System.Windows.Forms.Label();
+			this.os_buildLabel = new System.Windows.Forms.TextBox();
 			this.os_buildStaticLabel = new System.Windows.Forms.Label();
-			this.os_archLabel = new System.Windows.Forms.Label();
+			this.os_archLabel = new System.Windows.Forms.TextBox();
 			this.os_archStaticLabel = new System.Windows.Forms.Label();
-			this.os_systemLabel = new System.Windows.Forms.Label();
+			this.os_systemLabel = new System.Windows.Forms.TextBox();
 			this.os_systemStaticLabel = new System.Windows.Forms.Label();
 			this.osGroupBox = new System.Windows.Forms.GroupBox();
 			this.ramGroupBox = new System.Windows.Forms.GroupBox();
-			this.ram_maxLabel = new System.Windows.Forms.Label();
+			this.ram_maxLabel = new System.Windows.Forms.TextBox();
 			this.ram_occslotsStaticLabel = new System.Windows.Forms.Label();
 			this.ram_maxStaticLabel = new System.Windows.Forms.Label();
-			this.ram_occslotsLabel = new System.Windows.Forms.Label();
-			this.ram_totalLabel = new System.Windows.Forms.Label();
+			this.ram_occslotsLabel = new System.Windows.Forms.TextBox();
+			this.ram_totalLabel = new System.Windows.Forms.TextBox();
 			this.ram_totalslotsStaticLabel = new System.Windows.Forms.Label();
 			this.ram_totalStaticLabel = new System.Windows.Forms.Label();
-			this.ram_totalslotsLabel = new System.Windows.Forms.Label();
+			this.ram_totalslotsLabel = new System.Windows.Forms.TextBox();
 			this.motherboardGroupBox = new System.Windows.Forms.GroupBox();
-			this.modo_vendorStaticLabel = new System.Windows.Forms.Label();
-			this.mobo_vendorLabel = new System.Windows.Forms.Label();
-			this.mobo_revLabel = new System.Windows.Forms.Label();
+			this.mobo_vendorStaticLabel = new System.Windows.Forms.Label();
+			this.mobo_vendorLabel = new System.Windows.Forms.TextBox();
+			this.mobo_revLabel = new System.Windows.Forms.TextBox();
 			this.mobo_modelStaticLabel = new System.Windows.Forms.Label();
 			this.mobo_revStaticLabel = new System.Windows.Forms.Label();
-			this.mobo_modelLabel = new System.Windows.Forms.Label();
+			this.mobo_modelLabel = new System.Windows.Forms.TextBox();
 			this.biosGroupBox = new System.Windows.Forms.GroupBox();
 			this.bios_vendorStaticLabel = new System.Windows.Forms.Label();
-			this.bios_vendorLabel = new System.Windows.Forms.Label();
-			this.bios_verLabel = new System.Windows.Forms.Label();
+			this.bios_vendorLabel = new System.Windows.Forms.TextBox();
+			this.bios_verLabel = new System.Windows.Forms.TextBox();
 			this.bios_nameStaticLabel = new System.Windows.Forms.Label();
 			this.bios_verStaticLabel = new System.Windows.Forms.Label();
-			this.bios_nameLabel = new System.Windows.Forms.Label();
+			this.bios_nameLabel = new System.Windows.Forms.TextBox();
 			this.groupsPanel = new System.Windows.Forms.Panel();
 			this.tabPanel.SuspendLayout();
 			this.usersTab.SuspendLayout();
@@ -298,6 +298,11 @@
 			// 
 			this.os_langLabel.Location = new System.Drawing.Point(124, 80);
 			this.os_langLabel.Margin = new System.Windows.Forms.Padding(0);
+			this.os_langLabel.ReadOnly = true;
+			this.os_langLabel.BorderStyle = 0;
+			this.os_langLabel.BackColor = this.BackColor;
+			this.os_langLabel.TabStop = false;
+			this.os_langLabel.WordWrap = true;
 			this.os_langLabel.Name = "os_langLabel";
 			this.os_langLabel.Size = new System.Drawing.Size(290, 20);
 			this.os_langLabel.TabIndex = 8;
@@ -317,6 +322,11 @@
 			// 
 			this.os_buildLabel.Location = new System.Drawing.Point(124, 60);
 			this.os_buildLabel.Margin = new System.Windows.Forms.Padding(0);
+			this.os_buildLabel.ReadOnly = true;
+			this.os_buildLabel.BorderStyle = 0;
+			this.os_buildLabel.BackColor = this.BackColor;
+			this.os_buildLabel.TabStop = false;
+			this.os_buildLabel.WordWrap = true;
 			this.os_buildLabel.Name = "os_buildLabel";
 			this.os_buildLabel.Size = new System.Drawing.Size(290, 20);
 			this.os_buildLabel.TabIndex = 6;
@@ -336,6 +346,11 @@
 			// 
 			this.os_archLabel.Location = new System.Drawing.Point(124, 40);
 			this.os_archLabel.Margin = new System.Windows.Forms.Padding(0);
+			this.os_archLabel.ReadOnly = true;
+			this.os_archLabel.BorderStyle = 0;
+			this.os_archLabel.BackColor = this.BackColor;
+			this.os_archLabel.TabStop = false;
+			this.os_archLabel.WordWrap = true;
 			this.os_archLabel.Name = "os_archLabel";
 			this.os_archLabel.Size = new System.Drawing.Size(290, 20);
 			this.os_archLabel.TabIndex = 4;
@@ -355,6 +370,11 @@
 			// 
 			this.os_systemLabel.Location = new System.Drawing.Point(124, 20);
 			this.os_systemLabel.Margin = new System.Windows.Forms.Padding(0);
+			this.os_systemLabel.ReadOnly = true;
+			this.os_systemLabel.BorderStyle = 0;
+			this.os_systemLabel.BackColor = this.BackColor;
+			this.os_systemLabel.TabStop = false;
+			this.os_systemLabel.WordWrap = true;
 			this.os_systemLabel.Name = "os_systemLabel";
 			this.os_systemLabel.Size = new System.Drawing.Size(290, 20);
 			this.os_systemLabel.TabIndex = 2;
@@ -413,6 +433,11 @@
 			// 
 			this.ram_maxLabel.Location = new System.Drawing.Point(124, 80);
 			this.ram_maxLabel.Margin = new System.Windows.Forms.Padding(0);
+			this.ram_maxLabel.ReadOnly = true;
+			this.ram_maxLabel.BorderStyle = 0;
+			this.ram_maxLabel.BackColor = this.BackColor;
+			this.ram_maxLabel.TabStop = false;
+			this.ram_maxLabel.WordWrap = true;
 			this.ram_maxLabel.Name = "ram_maxLabel";
 			this.ram_maxLabel.Size = new System.Drawing.Size(290, 20);
 			this.ram_maxLabel.TabIndex = 8;
@@ -442,6 +467,11 @@
 			// 
 			this.ram_occslotsLabel.Location = new System.Drawing.Point(124, 20);
 			this.ram_occslotsLabel.Margin = new System.Windows.Forms.Padding(0);
+			this.ram_occslotsLabel.ReadOnly = true;
+			this.ram_occslotsLabel.BorderStyle = 0;
+			this.ram_occslotsLabel.BackColor = this.BackColor;
+			this.ram_occslotsLabel.TabStop = false;
+			this.ram_occslotsLabel.WordWrap = true;
 			this.ram_occslotsLabel.Name = "ram_occslotsLabel";
 			this.ram_occslotsLabel.Size = new System.Drawing.Size(290, 20);
 			this.ram_occslotsLabel.TabIndex = 2;
@@ -451,6 +481,11 @@
 			// 
 			this.ram_totalLabel.Location = new System.Drawing.Point(124, 60);
 			this.ram_totalLabel.Margin = new System.Windows.Forms.Padding(0);
+			this.ram_totalLabel.ReadOnly = true;
+			this.ram_totalLabel.BorderStyle = 0;
+			this.ram_totalLabel.BackColor = this.BackColor;
+			this.ram_totalLabel.TabStop = false;
+			this.ram_totalLabel.WordWrap = true;
 			this.ram_totalLabel.Name = "ram_totalLabel";
 			this.ram_totalLabel.Size = new System.Drawing.Size(290, 20);
 			this.ram_totalLabel.TabIndex = 6;
@@ -480,6 +515,11 @@
 			// 
 			this.ram_totalslotsLabel.Location = new System.Drawing.Point(124, 40);
 			this.ram_totalslotsLabel.Margin = new System.Windows.Forms.Padding(0);
+			this.ram_totalslotsLabel.ReadOnly = true;
+			this.ram_totalslotsLabel.BorderStyle = 0;
+			this.ram_totalslotsLabel.BackColor = this.BackColor;
+			this.ram_totalslotsLabel.TabStop = false;
+			this.ram_totalslotsLabel.WordWrap = true;
 			this.ram_totalslotsLabel.Name = "ram_totalslotsLabel";
 			this.ram_totalslotsLabel.Size = new System.Drawing.Size(290, 20);
 			this.ram_totalslotsLabel.TabIndex = 4;
@@ -488,7 +528,7 @@
 			// motherboardGroupBox
 			// 
 			this.motherboardGroupBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-			this.motherboardGroupBox.Controls.Add(this.modo_vendorStaticLabel);
+			this.motherboardGroupBox.Controls.Add(this.mobo_vendorStaticLabel);
 			this.motherboardGroupBox.Controls.Add(this.mobo_vendorLabel);
 			this.motherboardGroupBox.Controls.Add(this.mobo_revLabel);
 			this.motherboardGroupBox.Controls.Add(this.mobo_modelStaticLabel);
@@ -503,20 +543,25 @@
 			this.motherboardGroupBox.TabStop = false;
 			this.motherboardGroupBox.Text = "Motherboard";
 			// 
-			// modo_vendorStaticLabel
+			// mobo_vendorStaticLabel
 			// 
-			this.modo_vendorStaticLabel.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-			this.modo_vendorStaticLabel.Location = new System.Drawing.Point(4, 20);
-			this.modo_vendorStaticLabel.Margin = new System.Windows.Forms.Padding(0);
-			this.modo_vendorStaticLabel.Name = "modo_vendorStaticLabel";
-			this.modo_vendorStaticLabel.Size = new System.Drawing.Size(120, 20);
-			this.modo_vendorStaticLabel.TabIndex = 1;
-			this.modo_vendorStaticLabel.Text = "Vendor";
+			this.mobo_vendorStaticLabel.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+			this.mobo_vendorStaticLabel.Location = new System.Drawing.Point(4, 20);
+			this.mobo_vendorStaticLabel.Margin = new System.Windows.Forms.Padding(0);
+			this.mobo_vendorStaticLabel.Name = "modo_vendorStaticLabel";
+			this.mobo_vendorStaticLabel.Size = new System.Drawing.Size(120, 20);
+			this.mobo_vendorStaticLabel.TabIndex = 1;
+			this.mobo_vendorStaticLabel.Text = "Vendor";
 			// 
 			// mobo_vendorLabel
 			// 
 			this.mobo_vendorLabel.Location = new System.Drawing.Point(124, 20);
 			this.mobo_vendorLabel.Margin = new System.Windows.Forms.Padding(0);
+			this.mobo_vendorLabel.ReadOnly = true;
+			this.mobo_vendorLabel.BorderStyle = 0;
+			this.mobo_vendorLabel.BackColor = this.BackColor;
+			this.mobo_vendorLabel.TabStop = false;
+			this.mobo_vendorLabel.WordWrap = true;
 			this.mobo_vendorLabel.Name = "mobo_vendorLabel";
 			this.mobo_vendorLabel.Size = new System.Drawing.Size(290, 20);
 			this.mobo_vendorLabel.TabIndex = 2;
@@ -526,6 +571,11 @@
 			// 
 			this.mobo_revLabel.Location = new System.Drawing.Point(124, 60);
 			this.mobo_revLabel.Margin = new System.Windows.Forms.Padding(0);
+			this.mobo_revLabel.ReadOnly = true;
+			this.mobo_revLabel.BorderStyle = 0;
+			this.mobo_revLabel.BackColor = this.BackColor;
+			this.mobo_revLabel.TabStop = false;
+			this.mobo_revLabel.WordWrap = true;
 			this.mobo_revLabel.Name = "mobo_revLabel";
 			this.mobo_revLabel.Size = new System.Drawing.Size(290, 20);
 			this.mobo_revLabel.TabIndex = 6;
@@ -555,6 +605,11 @@
 			// 
 			this.mobo_modelLabel.Location = new System.Drawing.Point(124, 40);
 			this.mobo_modelLabel.Margin = new System.Windows.Forms.Padding(0);
+			this.mobo_modelLabel.ReadOnly = true;
+			this.mobo_modelLabel.BorderStyle = 0;
+			this.mobo_modelLabel.BackColor = this.BackColor;
+			this.mobo_modelLabel.TabStop = false;
+			this.mobo_modelLabel.WordWrap = true;
 			this.mobo_modelLabel.Name = "mobo_modelLabel";
 			this.mobo_modelLabel.Size = new System.Drawing.Size(290, 20);
 			this.mobo_modelLabel.TabIndex = 4;
@@ -592,6 +647,11 @@
 			// 
 			this.bios_vendorLabel.Location = new System.Drawing.Point(124, 20);
 			this.bios_vendorLabel.Margin = new System.Windows.Forms.Padding(0);
+			this.bios_vendorLabel.ReadOnly = true;
+			this.bios_vendorLabel.BorderStyle = 0;
+			this.bios_vendorLabel.BackColor = this.BackColor;
+			this.bios_vendorLabel.TabStop = false;
+			this.bios_vendorLabel.WordWrap = true;
 			this.bios_vendorLabel.Name = "bios_vendorLabel";
 			this.bios_vendorLabel.Size = new System.Drawing.Size(290, 20);
 			this.bios_vendorLabel.TabIndex = 2;
@@ -601,6 +661,11 @@
 			// 
 			this.bios_verLabel.Location = new System.Drawing.Point(124, 60);
 			this.bios_verLabel.Margin = new System.Windows.Forms.Padding(0);
+			this.bios_verLabel.ReadOnly = true;
+			this.bios_verLabel.BorderStyle = 0;
+			this.bios_verLabel.BackColor = this.BackColor;
+			this.bios_verLabel.TabStop = false;
+			this.bios_verLabel.WordWrap = true;
 			this.bios_verLabel.Name = "bios_verLabel";
 			this.bios_verLabel.Size = new System.Drawing.Size(290, 20);
 			this.bios_verLabel.TabIndex = 6;
@@ -630,6 +695,11 @@
 			// 
 			this.bios_nameLabel.Location = new System.Drawing.Point(124, 40);
 			this.bios_nameLabel.Margin = new System.Windows.Forms.Padding(0);
+			this.bios_nameLabel.ReadOnly = true;
+			this.bios_nameLabel.BorderStyle = 0;
+			this.bios_nameLabel.BackColor = this.BackColor;
+			this.bios_nameLabel.TabStop = false;
+			this.bios_nameLabel.WordWrap = true;
 			this.bios_nameLabel.Name = "bios_nameLabel";
 			this.bios_nameLabel.Size = new System.Drawing.Size(290, 20);
 			this.bios_nameLabel.TabIndex = 4;
@@ -685,38 +755,38 @@
 		private System.Windows.Forms.TabPage partitionsTab;
 		private System.Windows.Forms.TabPage dimmTab;
 		private System.Windows.Forms.TabPage networkingTab;
-		private System.Windows.Forms.Label os_systemLabel;
+		private System.Windows.Forms.TextBox os_systemLabel;
 		private System.Windows.Forms.Label os_systemStaticLabel;
-		private System.Windows.Forms.Label os_archLabel;
+		private System.Windows.Forms.TextBox os_archLabel;
 		private System.Windows.Forms.Label os_archStaticLabel;
-		private System.Windows.Forms.Label os_langLabel;
+		private System.Windows.Forms.TextBox os_langLabel;
 		private System.Windows.Forms.Label os_langStaticLabel;
-		private System.Windows.Forms.Label os_buildLabel;
+		private System.Windows.Forms.TextBox os_buildLabel;
 		private System.Windows.Forms.Label os_buildStaticLabel;
 		private System.Windows.Forms.GroupBox osGroupBox;
 		private System.Windows.Forms.GroupBox ramGroupBox;
-		private System.Windows.Forms.Label ram_maxLabel;
+		private System.Windows.Forms.TextBox ram_maxLabel;
 		private System.Windows.Forms.Label ram_occslotsStaticLabel;
 		private System.Windows.Forms.Label ram_maxStaticLabel;
-		private System.Windows.Forms.Label ram_occslotsLabel;
-		private System.Windows.Forms.Label ram_totalLabel;
+		private System.Windows.Forms.TextBox ram_occslotsLabel;
+		private System.Windows.Forms.TextBox ram_totalLabel;
 		private System.Windows.Forms.Label ram_totalslotsStaticLabel;
 		private System.Windows.Forms.Label ram_totalStaticLabel;
-		private System.Windows.Forms.Label ram_totalslotsLabel;
+		private System.Windows.Forms.TextBox ram_totalslotsLabel;
 		private System.Windows.Forms.GroupBox motherboardGroupBox;
-		private System.Windows.Forms.Label modo_vendorStaticLabel;
-		private System.Windows.Forms.Label mobo_vendorLabel;
-		private System.Windows.Forms.Label mobo_revLabel;
+		private System.Windows.Forms.Label mobo_vendorStaticLabel;
+		private System.Windows.Forms.TextBox mobo_vendorLabel;
+		private System.Windows.Forms.TextBox mobo_revLabel;
 		private System.Windows.Forms.Label mobo_modelStaticLabel;
 		private System.Windows.Forms.Label mobo_revStaticLabel;
-		private System.Windows.Forms.Label mobo_modelLabel;
+		private System.Windows.Forms.TextBox mobo_modelLabel;
 		private System.Windows.Forms.GroupBox biosGroupBox;
 		private System.Windows.Forms.Label bios_vendorStaticLabel;
-		private System.Windows.Forms.Label bios_vendorLabel;
-		private System.Windows.Forms.Label bios_verLabel;
+		private System.Windows.Forms.TextBox bios_vendorLabel;
+		private System.Windows.Forms.TextBox bios_verLabel;
 		private System.Windows.Forms.Label bios_nameStaticLabel;
 		private System.Windows.Forms.Label bios_verStaticLabel;
-		private System.Windows.Forms.Label bios_nameLabel;
+		private System.Windows.Forms.TextBox bios_nameLabel;
 		private System.Windows.Forms.TabPage gpuTab;
 		private System.Windows.Forms.TabPage monitorsTab;
 		private System.Windows.Forms.TabPage printersTab;

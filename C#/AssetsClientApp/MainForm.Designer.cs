@@ -44,7 +44,7 @@
 			this.searchResultsBox.Margin = new System.Windows.Forms.Padding(0);
 			this.searchResultsBox.Name = "searchResultsBox";
 			this.searchResultsBox.Size = new System.Drawing.Size(161, 131);
-			this.searchResultsBox.TabIndex = 4;
+			this.searchResultsBox.TabIndex = 3;
 			this.searchResultsBox.SelectedIndexChanged += new System.EventHandler(this.searchResultsBox_SelectedIndexChanged);
 			this.searchResultsBox.DoubleClick += new System.EventHandler(this.searchResultsBox_DoubleClick);
 			this.searchResultsBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.searchResultsBox_KeyDown);
@@ -77,7 +77,7 @@
 			this.loadEntryButton.Margin = new System.Windows.Forms.Padding(0);
 			this.loadEntryButton.Name = "loadEntryButton";
 			this.loadEntryButton.Size = new System.Drawing.Size(161, 25);
-			this.loadEntryButton.TabIndex = 9;
+			this.loadEntryButton.TabIndex = 4;
 			this.loadEntryButton.Text = "Load entry";
 			this.loadEntryButton.UseVisualStyleBackColor = true;
 			this.loadEntryButton.Click += new System.EventHandler(this.loadEntryButton_Click);
@@ -88,7 +88,7 @@
 			this.settingsButton.Margin = new System.Windows.Forms.Padding(0);
 			this.settingsButton.Name = "settingsButton";
 			this.settingsButton.Size = new System.Drawing.Size(25, 25);
-			this.settingsButton.TabIndex = 10;
+			this.settingsButton.TabIndex = 2;
 			this.settingsButton.UseVisualStyleBackColor = true;
 			this.settingsButton.Click += new System.EventHandler(this.settingsButton_Click);
 			// 

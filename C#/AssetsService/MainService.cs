@@ -79,7 +79,7 @@ namespace AssetsService
 		private void onSchedule()
 		{
 			// scheduler event starts here
-			assetsEventLog.WriteEntry($"Assets poller timer event starts, default writing to {EventLog.Log}, current writing to {EventLog.Log}", EventLogEntryType.Information, 3);
+			assetsEventLog.WriteEntry($"Assets poller timer event starts, default writing to {EventLog.Log}, current writing to {assetsEventLog.Log}", EventLogEntryType.Information, 3);
 
 			// start of scan process
 

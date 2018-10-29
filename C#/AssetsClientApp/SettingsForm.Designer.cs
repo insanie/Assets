@@ -41,7 +41,7 @@
 			this.saveSettingsButton.Margin = new System.Windows.Forms.Padding(0);
 			this.saveSettingsButton.Name = "saveSettingsButton";
 			this.saveSettingsButton.Size = new System.Drawing.Size(75, 25);
-			this.saveSettingsButton.TabIndex = 0;
+			this.saveSettingsButton.TabIndex = 2;
 			this.saveSettingsButton.Text = "Save";
 			this.saveSettingsButton.UseVisualStyleBackColor = true;
 			this.saveSettingsButton.Click += new System.EventHandler(this.saveSettingsButton_Click);
@@ -51,7 +51,7 @@
 			this.serverSettingsTextBox.Location = new System.Drawing.Point(98, 12);
 			this.serverSettingsTextBox.Name = "serverSettingsTextBox";
 			this.serverSettingsTextBox.Size = new System.Drawing.Size(100, 25);
-			this.serverSettingsTextBox.TabIndex = 1;
+			this.serverSettingsTextBox.TabIndex = 0;
 			this.serverSettingsTextBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.serverSettingsTextBox_KeyDown);
 			// 
 			// databaseSettingsTextBox
@@ -59,7 +59,7 @@
 			this.databaseSettingsTextBox.Location = new System.Drawing.Point(98, 43);
 			this.databaseSettingsTextBox.Name = "databaseSettingsTextBox";
 			this.databaseSettingsTextBox.Size = new System.Drawing.Size(100, 25);
-			this.databaseSettingsTextBox.TabIndex = 2;
+			this.databaseSettingsTextBox.TabIndex = 1;
 			this.databaseSettingsTextBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.databaseSettingsTextBox_KeyDown);
 			// 
 			// serverSettingsLabel

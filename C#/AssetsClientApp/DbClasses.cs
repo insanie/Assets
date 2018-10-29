@@ -231,26 +231,33 @@ namespace AssetsClientApp
 		public byte labelHeight { get; }
 		public byte labelWidth { get; }
 		public byte labelStaticWidth { get; }
+		//public System.Drawing.Color backColor { get; }
 		public drawer(byte height, byte width, byte staticWidth)
 		{
 			labelHeight = height;
 			labelWidth = width;
 			labelStaticWidth = staticWidth;
+			//backColor = Control.DefaultBackColor;
 		}
 		// creates labels with data from a particular property of every element of the list, requires TabPage to work, tabType only defines the name of each label (see the loop)
 		// ypos defines margin from the top (may be deprecated, I dunno), suffix lets you add a string to the labels text ('GB', 'MHz', etc.)
-		public void createLabel(List<dboTable> data, TabPage panel, String tabType, String fieldName, Int16 ypos, String suffix = "")
+		public void createROTextBox(List<dboTable> data, TabPage panel, String tabType, String fieldName, Int16 ypos, String suffix = "")
 		{
 			Byte positionIncrement = 1;
 			// using dictionary to name labels dynamically
-			Dictionary<String, Label> names = new Dictionary<String, Label>();
+			Dictionary<String, TextBox> names = new Dictionary<String, TextBox>();
 			foreach (dboTable tmp in data)
 			{
 				String name = $"{tabType}_{fieldName}Label" + Convert.ToString(positionIncrement);
-				names[name] = new Label();
+				names[name] = new TextBox();
 				panel.Controls.Add(names[name]);
 				names[name].Location = new System.Drawing.Point(labelStaticWidth + 1 + labelWidth * (positionIncrement - 1), ypos);
 				names[name].Margin = new Padding(0);
+				names[name].ReadOnly = true;
+				names[name].BorderStyle = 0;
+				names[name].BackColor = Control.DefaultBackColor;
+				names[name].TabStop = false;
+				names[name].WordWrap = true;
 				names[name].Name = name;
 				names[name].Size = new System.Drawing.Size(labelWidth, labelHeight);
 				names[name].Text = Convert.ToString(typeof(dboTable).GetProperty(fieldName).GetValue(tmp, null) + suffix);
