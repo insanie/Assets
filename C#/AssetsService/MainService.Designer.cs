@@ -1,6 +1,6 @@
-﻿namespace AssetsPoller
+﻿namespace AssetsService
 {
-	partial class Service1
+	partial class MainService
 	{
 		/// <summary> 
 		/// Required designer variable.
@@ -28,10 +28,27 @@
 		/// </summary>
 		private void InitializeComponent()
 		{
-			components = new System.ComponentModel.Container();
-			this.ServiceName = "Service1";
+			// 
+			// MainService
+			// 
+			this.ServiceName = "Assets Service";
+			// 
+			// assetsEventLog
+			// 
+			this.assetsEventLog = new System.Diagnostics.EventLog();
+			((System.ComponentModel.ISupportInitialize)(this.assetsEventLog)).BeginInit();
+			this.assetsEventLog.Log = mainInfo.logName;
+			this.assetsEventLog.Source = mainInfo.logSource;
+			if (!System.Diagnostics.EventLog.SourceExists(mainInfo.logSource))
+			{
+				System.Diagnostics.EventLog.CreateEventSource(mainInfo.logSource, mainInfo.logName);
+			}
+			((System.ComponentModel.ISupportInitialize)(this.assetsEventLog)).EndInit();
+
 		}
 
 		#endregion
+
+		private System.Diagnostics.EventLog assetsEventLog;
 	}
 }

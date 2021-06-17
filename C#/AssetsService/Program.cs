@@ -4,7 +4,7 @@ using System.Linq;
 using System.ServiceProcess;
 using System.Text;
 
-namespace AssetsPoller
+namespace AssetsService
 {
 	static class Program
 	{
@@ -16,7 +16,7 @@ namespace AssetsPoller
 			ServiceBase[] ServicesToRun;
 			ServicesToRun = new ServiceBase[]
 			{
-				new Service1()
+				new MainService()
 			};
 			ServiceBase.Run(ServicesToRun);
 		}

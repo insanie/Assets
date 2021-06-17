@@ -45,38 +45,38 @@ namespace AssetsClientApp
 			// static ones
 			current.createStaticLabel(new[] {"Model", "Frequency", "Cores", "Threads", "Socket"}, cpuTab, "cpu");
 			// value ones
-			current.createLabel(sentData[2], cpuTab, "cpu", "model", 1);
-			current.createLabel(sentData[2], cpuTab, "cpu", "freq", 21, " MHz");
-			current.createLabel(sentData[2], cpuTab, "cpu", "cores", 41);
-			current.createLabel(sentData[2], cpuTab, "cpu", "threads", 61);
-			current.createLabel(sentData[2], cpuTab, "cpu", "socket", 81);
+			current.createROTextBox(sentData[2], cpuTab, "cpu", "model", 1);
+			current.createROTextBox(sentData[2], cpuTab, "cpu", "freq", 21, " MHz");
+			current.createROTextBox(sentData[2], cpuTab, "cpu", "cores", 41);
+			current.createROTextBox(sentData[2], cpuTab, "cpu", "threads", 61);
+			current.createROTextBox(sentData[2], cpuTab, "cpu", "socket", 81);
 
 			// dimm tab labels creating
 			// static ones
 			current.createStaticLabel(new[] {"Slot", "Frequency", "Size", "Vendor", "Model"}, dimmTab, "dimm");
 			// value ones
-			current.createLabel(sentData[5], dimmTab, "dimm", "slot", 1);
-			current.createLabel(sentData[5], dimmTab, "dimm", "freq", 21, " MHz");
-			current.createLabel(sentData[5], dimmTab, "dimm", "size", 41, " GB");
-			current.createLabel(sentData[5], dimmTab, "dimm", "vendor", 61);
-			current.createLabel(sentData[5], dimmTab, "dimm", "model", 81);
+			current.createROTextBox(sentData[5], dimmTab, "dimm", "slot", 1);
+			current.createROTextBox(sentData[5], dimmTab, "dimm", "freq", 21, " MHz");
+			current.createROTextBox(sentData[5], dimmTab, "dimm", "size", 41, " GB");
+			current.createROTextBox(sentData[5], dimmTab, "dimm", "vendor", 61);
+			current.createROTextBox(sentData[5], dimmTab, "dimm", "model", 81);
 
 			// drive tab labels creating
 			// static ones
 			current.createStaticLabel(new[] {"Model", "Size"}, drivesTab, "drives");
 			// value ones
-			current.createLabel(sentData[3], drivesTab, "drives", "model", 1);
-			current.createLabel(sentData[3], drivesTab, "drives", "size", 21, " GB");
+			current.createROTextBox(sentData[3], drivesTab, "drives", "model", 1);
+			current.createROTextBox(sentData[3], drivesTab, "drives", "size", 21, " GB");
 
 			// partitions tab labels creating
 			// static ones
 			current.createStaticLabel(new[] {"Drive", "Filesystem", "Size", "Used", "Free", "Occupation"}, partitionsTab, "partitions");
 			// value ones
-			current.createLabel(sentData[4], partitionsTab, "partitions", "letter", 1);
-			current.createLabel(sentData[4], partitionsTab, "partitions", "filesys", 21);
-			current.createLabel(sentData[4], partitionsTab, "partitions", "size", 41, " GB");
-			current.createLabel(sentData[4], partitionsTab, "partitions", "used", 61, " GB");
-			current.createLabel(sentData[4], partitionsTab, "partitions", "free", 81, " GB");
+			current.createROTextBox(sentData[4], partitionsTab, "partitions", "letter", 1);
+			current.createROTextBox(sentData[4], partitionsTab, "partitions", "filesys", 21);
+			current.createROTextBox(sentData[4], partitionsTab, "partitions", "size", 41, " GB");
+			current.createROTextBox(sentData[4], partitionsTab, "partitions", "used", 61, " GB");
+			current.createROTextBox(sentData[4], partitionsTab, "partitions", "free", 81, " GB");
 			// creating progress bars
 			Byte positionIncrement = 1;
 			Dictionary<String, ProgressBar> names = new Dictionary<String, ProgressBar>();
@@ -89,7 +89,15 @@ namespace AssetsClientApp
 				names[name].Margin = new Padding(0);
 				names[name].Name = name;
 				names[name].Size = new Size(current.labelWidth / 2, current.labelHeight - 4);
-				names[name].Value = Convert.ToInt32(tmp.used / tmp.size * 100);
+				// fix for NaN values as a result for dividing by 0
+				if (Double.IsNaN(tmp.used / tmp.size * 100))
+				{
+					names[name].Value = 0;
+				}
+				else
+				{
+					names[name].Value = Convert.ToInt32(tmp.used / tmp.size * 100);
+				}
 				positionIncrement++;
 			}
 
@@ -97,39 +105,39 @@ namespace AssetsClientApp
 			// static ones
 			current.createStaticLabel(new[] {"Model", "Connection name", "MAC address", "Adapter enabled", "DHCP enabled", "IP address", "Netmask", "Gateway", "DNS servers"}, networkingTab, "partitions");
 			// value ones
-			current.createLabel(sentData[6], networkingTab, "networking", "model", 1);
-			current.createLabel(sentData[6], networkingTab, "networking", "conname", 21);
-			current.createLabel(sentData[6], networkingTab, "networking", "mac", 41);
-			current.createLabel(sentData[6], networkingTab, "networking", "ena", 61);
-			current.createLabel(sentData[6], networkingTab, "networking", "dhcp", 81);
-			current.createLabel(sentData[6], networkingTab, "networking", "ip", 101);
-			current.createLabel(sentData[6], networkingTab, "networking", "mask", 121);
-			current.createLabel(sentData[6], networkingTab, "networking", "gate", 141);
-			current.createLabel(sentData[6], networkingTab, "networking", "dns", 161);
+			current.createROTextBox(sentData[6], networkingTab, "networking", "model", 1);
+			current.createROTextBox(sentData[6], networkingTab, "networking", "conname", 21);
+			current.createROTextBox(sentData[6], networkingTab, "networking", "mac", 41);
+			current.createROTextBox(sentData[6], networkingTab, "networking", "ena", 61);
+			current.createROTextBox(sentData[6], networkingTab, "networking", "dhcp", 81);
+			current.createROTextBox(sentData[6], networkingTab, "networking", "ip", 101);
+			current.createROTextBox(sentData[6], networkingTab, "networking", "mask", 121);
+			current.createROTextBox(sentData[6], networkingTab, "networking", "gate", 141);
+			current.createROTextBox(sentData[6], networkingTab, "networking", "dns", 161);
 
 			// gpu tab labels creating
 			// static ones
 			current.createStaticLabel(new[] {"Model", "Driver"}, gpuTab, "gpu");
 			// value ones
-			current.createLabel(sentData[7], gpuTab, "gpu", "model", 1);
-			current.createLabel(sentData[7], gpuTab, "gpu", "driver", 21);
+			current.createROTextBox(sentData[7], gpuTab, "gpu", "model", 1);
+			current.createROTextBox(sentData[7], gpuTab, "gpu", "driver", 21);
 
 			// monitors tab labels creating
 			// static ones
 			current.createStaticLabel(new[] {"Vendor", "Model", "Serial number"}, monitorsTab, "partitions");
 			// value ones
-			current.createLabel(sentData[8], monitorsTab, "monitors", "vendor", 1);
-			current.createLabel(sentData[8], monitorsTab, "monitors", "model", 21);
-			current.createLabel(sentData[8], monitorsTab, "monitors", "sn", 41);
+			current.createROTextBox(sentData[8], monitorsTab, "monitors", "vendor", 1);
+			current.createROTextBox(sentData[8], monitorsTab, "monitors", "model", 21);
+			current.createROTextBox(sentData[8], monitorsTab, "monitors", "sn", 41);
 
 			// printers tab labels creating
 			// static ones
 			current.createStaticLabel(new[] {"Name", "Default", "Shared", "Port"}, printersTab, "partitions");
 			// value ones
-			current.createLabel(sentData[9], printersTab, "printers", "name", 1);
-			current.createLabel(sentData[9], printersTab, "printers", "def", 21);
-			current.createLabel(sentData[9], printersTab, "printers", "shared", 41);
-			current.createLabel(sentData[9], printersTab, "printers", "port", 61);
+			current.createROTextBox(sentData[9], printersTab, "printers", "name", 1);
+			current.createROTextBox(sentData[9], printersTab, "printers", "def", 21);
+			current.createROTextBox(sentData[9], printersTab, "printers", "shared", 41);
+			current.createROTextBox(sentData[9], printersTab, "printers", "port", 61);
 
 			// users tab list creating
 			DataTable usersDataSource = new DataTable();
@@ -139,9 +147,10 @@ namespace AssetsClientApp
 			usersDataSource.Columns.Add("Company");
 			usersDataSource.Columns.Add("Department");
 			usersDataSource.Columns.Add("Account");
-			foreach(dboTable tmp in sentData[1])
+			usersDataSource.Columns.Add("Job");
+			foreach (dboTable tmp in sentData[1])
 			{
-				usersDataSource.Rows.Add(tmp.place, tmp.fullname, tmp.logontime, tmp.company, tmp.department, tmp.account);
+				usersDataSource.Rows.Add(tmp.place, tmp.fullname, tmp.logontime, tmp.company, tmp.department, tmp.account, tmp.job);
 			}
 			usersGridView.DataSource = usersDataSource;
 			usersGridView.Columns[0].Width = 50;
@@ -150,6 +159,7 @@ namespace AssetsClientApp
 			usersGridView.Columns[3].Width = 170;
 			usersGridView.Columns[4].Width = 181;
 			usersGridView.Columns[5].Width = 90;
+			usersGridView.Columns[6].Width = 170;
 			usersGridView.Sort(usersGridView.Columns[0], ListSortDirection.Ascending);
 
 			// software tab list creating
