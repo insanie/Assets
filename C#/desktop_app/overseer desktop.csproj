@@ -6,8 +6,8 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{97BFAB12-BD3C-4D41-8BC0-6643398050AA}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>AssetsClientApp</RootNamespace>
-    <AssemblyName>AssetsClientApp</AssemblyName>
+    <RootNamespace>overseer</RootNamespace>
+    <AssemblyName>overseer desktop</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
